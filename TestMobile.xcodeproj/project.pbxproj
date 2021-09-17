@@ -15,6 +15,12 @@
 		FA12795A26F330C400751746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12795826F330C400751746 /* LaunchScreen.storyboard */; };
 		FA12796526F330C400751746 /* TestMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12796426F330C400751746 /* TestMobileTests.swift */; };
 		FA12797026F330C400751746 /* TestMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12796F26F330C400751746 /* TestMobileUITests.swift */; };
+		FA12797E26F331AD00751746 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12797D26F331AD00751746 /* Verification.swift */; };
+		FA12798226F3355700751746 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798126F3355700751746 /* Profil.swift */; };
+		FA12798426F3356200751746 /* Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798326F3356200751746 /* Confirm.swift */; };
+		FA12798626F3356D00751746 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798526F3356D00751746 /* Password.swift */; };
+		FA12798D26F343DD00751746 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798C26F343DD00751746 /* Utils.swift */; };
+		FA12798F26F343FD00751746 /* Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798E26F343FD00751746 /* Extansions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		FA12796B26F330C400751746 /* TestMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA12796F26F330C400751746 /* TestMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMobileUITests.swift; sourceTree = "<group>"; };
 		FA12797126F330C400751746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA12797D26F331AD00751746 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		FA12798126F3355700751746 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
+		FA12798326F3356200751746 /* Confirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirm.swift; sourceTree = "<group>"; };
+		FA12798526F3356D00751746 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		FA12798C26F343DD00751746 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FA12798E26F343FD00751746 /* Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extansions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,10 @@
 		FA12794126F330C100751746 = {
 			isa = PBXGroup;
 			children = (
+				FA12798926F3435200751746 /* Utils */,
+				FA12798B26F3436000751746 /* Models */,
+				FA12798A26F3435800751746 /* Extansions */,
+				FA12798726F3357100751746 /* Controllers */,
 				FA12794C26F330C100751746 /* TestMobile */,
 				FA12796326F330C400751746 /* TestMobileTests */,
 				FA12796E26F330C400751746 /* TestMobileUITests */,
@@ -105,6 +121,7 @@
 				FA12795326F330C100751746 /* Main.storyboard */,
 				FA12795626F330C400751746 /* Assets.xcassets */,
 				FA12795826F330C400751746 /* LaunchScreen.storyboard */,
+				FA12798826F3434800751746 /* Products */,
 				FA12795B26F330C400751746 /* Info.plist */,
 			);
 			path = TestMobile;
@@ -126,6 +143,47 @@
 				FA12797126F330C400751746 /* Info.plist */,
 			);
 			path = TestMobileUITests;
+			sourceTree = "<group>";
+		};
+		FA12798726F3357100751746 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA12797D26F331AD00751746 /* Verification.swift */,
+				FA12798526F3356D00751746 /* Password.swift */,
+				FA12798326F3356200751746 /* Confirm.swift */,
+				FA12798126F3355700751746 /* Profil.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA12798826F3434800751746 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		FA12798926F3435200751746 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FA12798C26F343DD00751746 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FA12798A26F3435800751746 /* Extansions */ = {
+			isa = PBXGroup;
+			children = (
+				FA12798E26F343FD00751746 /* Extansions.swift */,
+			);
+			path = Extansions;
+			sourceTree = "<group>";
+		};
+		FA12798B26F3436000751746 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +318,13 @@
 			files = (
 				FA12795226F330C100751746 /* ViewController.swift in Sources */,
 				FA12794E26F330C100751746 /* AppDelegate.swift in Sources */,
+				FA12798426F3356200751746 /* Confirm.swift in Sources */,
+				FA12798626F3356D00751746 /* Password.swift in Sources */,
+				FA12798F26F343FD00751746 /* Extansions.swift in Sources */,
 				FA12795026F330C100751746 /* SceneDelegate.swift in Sources */,
+				FA12798226F3355700751746 /* Profil.swift in Sources */,
+				FA12797E26F331AD00751746 /* Verification.swift in Sources */,
+				FA12798D26F343DD00751746 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
