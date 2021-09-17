@@ -55,7 +55,7 @@ class Vertification: UIViewController {
    @objc func buttonClicked() {
          print("Button Clicked")
         
-        self.navigationController?.pushViewController(Password(), animated: false)
+        self.navigationController?.pushViewController(Confirm(), animated: false)
     }
     @objc func infoclicked() {
           print("need help?")

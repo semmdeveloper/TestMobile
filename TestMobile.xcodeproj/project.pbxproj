@@ -17,8 +17,8 @@
 		FA12797026F330C400751746 /* TestMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12796F26F330C400751746 /* TestMobileUITests.swift */; };
 		FA12797E26F331AD00751746 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12797D26F331AD00751746 /* Verification.swift */; };
 		FA12798226F3355700751746 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798126F3355700751746 /* Profil.swift */; };
-		FA12798426F3356200751746 /* Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798326F3356200751746 /* Confirm.swift */; };
-		FA12798626F3356D00751746 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798526F3356D00751746 /* Password.swift */; };
+		FA12798426F3356200751746 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798326F3356200751746 /* Password.swift */; };
+		FA12798626F3356D00751746 /* Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798526F3356D00751746 /* Confirm.swift */; };
 		FA12798D26F343DD00751746 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798C26F343DD00751746 /* Utils.swift */; };
 		FA12798F26F343FD00751746 /* Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798E26F343FD00751746 /* Extansions.swift */; };
 /* End PBXBuildFile section */
@@ -57,8 +57,8 @@
 		FA12797126F330C400751746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA12797D26F331AD00751746 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		FA12798126F3355700751746 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
-		FA12798326F3356200751746 /* Confirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirm.swift; sourceTree = "<group>"; };
-		FA12798526F3356D00751746 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		FA12798326F3356200751746 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		FA12798526F3356D00751746 /* Confirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirm.swift; sourceTree = "<group>"; };
 		FA12798C26F343DD00751746 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FA12798E26F343FD00751746 /* Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extansions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				FA12797D26F331AD00751746 /* Verification.swift */,
-				FA12798526F3356D00751746 /* Password.swift */,
-				FA12798326F3356200751746 /* Confirm.swift */,
+				FA12798526F3356D00751746 /* Confirm.swift */,
+				FA12798326F3356200751746 /* Password.swift */,
 				FA12798126F3355700751746 /* Profil.swift */,
 			);
 			path = Controllers;
@@ -318,8 +318,8 @@
 			files = (
 				FA12795226F330C100751746 /* ViewController.swift in Sources */,
 				FA12794E26F330C100751746 /* AppDelegate.swift in Sources */,
-				FA12798426F3356200751746 /* Confirm.swift in Sources */,
-				FA12798626F3356D00751746 /* Password.swift in Sources */,
+				FA12798426F3356200751746 /* Password.swift in Sources */,
+				FA12798626F3356D00751746 /* Confirm.swift in Sources */,
 				FA12798F26F343FD00751746 /* Extansions.swift in Sources */,
 				FA12795026F330C100751746 /* SceneDelegate.swift in Sources */,
 				FA12798226F3355700751746 /* Profil.swift in Sources */,
