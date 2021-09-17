@@ -40,9 +40,12 @@ class Profil: UIViewController {
         view.layer.cornerRadius = 15
         view.font = UIFont(name: "HelveticaNeue-Light", size: 17)
         view.placeholder = "FULL NAME"
+                
+        
         view.backgroundColor = UIColor.white
         view.tintColor = .gray
         view.textAlignment=NSTextAlignment.center
+        view.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
         return view
     }()
     let mailTF :UITextField = {

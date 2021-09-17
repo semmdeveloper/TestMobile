@@ -13,6 +13,7 @@ class Utils{
     static let lblbuttonColor=UIColor(rgb: 0x04A6FB)
     static let verifirycodeColor=UIColor(rgb: 0x313E47)
     static let editprofilecolor=UIColor(rgb: 0x313E47)
+    static let textfieldcolor=UIColor(rgb: 0xBBBBBB)
 
 }
 
