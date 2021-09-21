@@ -1,18 +1,25 @@
-//
-//  CustomLable.swift
-//  TestMobile
-//
-//  Created by الله أكبر on 16/09/21.
-//
 
 import UIKit
-class Vertification: UIViewController {
+
+class Password: UIViewController {
+
     let emailTF :UITextField = {
         let view = UITextField()
         view.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.4, width: UIScreen.main.bounds.width*0.70, height: 48)
         view.layer.cornerRadius = 15
         view.font = UIFont(name: "HelveticaNeue-Light", size: 17)
-        view.placeholder = "Email or Phone number"
+        view.placeholder = "Confirm password"
+        view.backgroundColor = UIColor.white
+        view.tintColor = .gray
+        view.textAlignment=NSTextAlignment.center
+        return view
+    }()
+    let passwordTF :UITextField = {
+        let view = UITextField()
+        view.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.33, width: UIScreen.main.bounds.width*0.70, height: 48)
+        view.layer.cornerRadius = 15
+        view.font = UIFont(name: "HelveticaNeue-Light", size: 17)
+        view.placeholder = "New password"
         view.backgroundColor = UIColor.white
         view.tintColor = .gray
         view.textAlignment=NSTextAlignment.center
@@ -21,10 +28,10 @@ class Vertification: UIViewController {
     
     let btn:UIButton={
         let btn = UIButton()
-        btn.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.47, width: UIScreen.main.bounds.width*0.70, height: 48)
+        btn.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.48, width: UIScreen.main.bounds.width*0.70, height: 48)
         btn.backgroundColor = Utils.buttonColor
         btn.layer.cornerRadius = 15
-        btn.setTitle("Get verification", for: .normal)
+        btn.setTitle("Go to profile", for: .normal)
         btn.title(for: .normal)
         btn.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         return btn
@@ -43,6 +50,7 @@ class Vertification: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUi()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         navigationController?.navigationBar.barTintColor = Utils.backGroundColor
         view.backgroundColor = Utils.backGroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -51,11 +59,12 @@ class Vertification: UIViewController {
         view.addSubview(emailTF)
         view.addSubview(btn)
         view.addSubview(lblbtn)
+        view.addSubview(passwordTF)
     }
    @objc func buttonClicked() {
          print("Button Clicked")
         
-        self.navigationController?.pushViewController(Confirm(), animated: false)
+        self.navigationController?.pushViewController(Profil(), animated: false)
     }
     @objc func infoclicked() {
           print("need help?")
@@ -64,4 +73,3 @@ class Vertification: UIViewController {
      }
     
 }
-

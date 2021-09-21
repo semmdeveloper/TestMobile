@@ -1,9 +1,4 @@
-//
-//  Profil.swift
-//  TestMobile
-//
-//  Created by الله أكبر on 16/09/21.
-//
+
 
 import UIKit
 
@@ -21,7 +16,7 @@ class Profil: UIViewController {
 
     let profileView: UIView={
         var viewframe = UIView()
-        viewframe.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.15, width: UIScreen.main.bounds.width*0.90, height: 140)
+        viewframe.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.16, width: UIScreen.main.bounds.width*0.90, height: 140)
         viewframe.layer.cornerRadius = 15
         let imageView=UIImageView(image: UIImage(named: "profile.svg"))
         imageView.frame=CGRect(x: viewframe.frame.width*0.35, y: viewframe.frame.height*0.15, width: 110, height: 110)
@@ -36,7 +31,7 @@ class Profil: UIViewController {
 
     let passwordTF :UITextField = {
         let view = UITextField()
-        view.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.33, width: UIScreen.main.bounds.width*0.90, height: 80)
+        view.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.36, width: UIScreen.main.bounds.width*0.90, height: 80)
         view.layer.cornerRadius = 15
         view.font = UIFont(name: "HelveticaNeue-Light", size: 17)
         view.placeholder = "FULL NAME"
@@ -50,7 +45,7 @@ class Profil: UIViewController {
     }()
     let mailTF :UITextField = {
         let view = UITextField()
-        view.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.43, width: UIScreen.main.bounds.width*0.90, height: 80)
+        view.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.47, width: UIScreen.main.bounds.width*0.90, height: 80)
         view.layer.cornerRadius = 15
         view.font = UIFont(name: "HelveticaNeue-Light", size: 17)
         view.placeholder = "YOUR EMAIL"
@@ -61,10 +56,10 @@ class Profil: UIViewController {
     }()
     let numberTF :UITextField = {
         let view = UITextField()
-        view.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.53, width: UIScreen.main.bounds.width*0.90, height: 80)
+        view.frame = CGRect(x: UIScreen.main.bounds.width*0.05, y: UIScreen.main.bounds.height*0.58, width: UIScreen.main.bounds.width*0.90, height: 80)
         view.layer.cornerRadius = 15
         view.font = UIFont(name: "HelveticaNeue-Light", size: 17)
-        view.placeholder = "YOUR EMAIL"
+        view.placeholder = "PHONE NUMBER"
         view.backgroundColor = UIColor.white
         view.tintColor = .gray
         view.textAlignment=NSTextAlignment.center
@@ -73,7 +68,7 @@ class Profil: UIViewController {
     
     let btn:UIButton={
         let btn = UIButton()
-        btn.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.65, width: UIScreen.main.bounds.width*0.70, height: 48)
+        btn.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.71, width: UIScreen.main.bounds.width*0.70, height: 48)
         btn.backgroundColor = Utils.buttonColor
         btn.layer.cornerRadius = 15
         btn.setTitle("Go to dashboard", for: .normal)
@@ -83,7 +78,7 @@ class Profil: UIViewController {
     }()
     
     
-    let lblbtn:UIButton={
+    let lblbtn:UIButton={ 
         let lblbtn = UIButton()
         lblbtn.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.80, width: UIScreen.main.bounds.width*0.70, height: 48)
         lblbtn.setTitle("Need Help?", for: .normal)
@@ -95,7 +90,8 @@ class Profil: UIViewController {
     let imagebtn:UIButton={
         let imagebtn = UIButton()
         let imageView=UIImageView(image: UIImage(named: "vec.svg"))
-        imagebtn.frame=CGRect(x: imageView.frame.width*15, y: 255, width: 120, height: 500)
+        imagebtn.frame=CGRect(x: imageView.frame.width*14
+                              , y: 245, width: 120, height: 500)
         imagebtn.addSubview(imageView)
         imagebtn.setTitleColor(Utils.lblbuttonColor, for: .normal)
         imagebtn.addTarget(self, action: #selector(editclicked), for: .touchDown)
@@ -107,12 +103,12 @@ class Profil: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUi()
+        self.navigationItem.setHidesBackButton(true, animated: false)
         navigationController?.navigationBar.barTintColor = Utils.backGroundColor
         view.backgroundColor = Utils.backGroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     private func setUpUi(){
-//        view.addSubview(emailTF)
         view.addSubview(btn)
         view.addSubview(lblbtn)
         view.addSubview(passwordTF)
@@ -126,10 +122,17 @@ class Profil: UIViewController {
 
 
     }
+    
+    var window: UIWindow?
    @objc func buttonClicked() {
          print("Button Clicked")
-        
-        self.navigationController?.pushViewController(Profil(), animated: false)
+    let controller = ViewController()
+    controller.modalPresentationStyle = .overFullScreen
+    
+    self.present(controller, animated: true, completion: nil)
+    
+
+
     }
     @objc func infoclicked() {
           print("need help?")
@@ -141,4 +144,16 @@ class Profil: UIViewController {
         print("Button Clicked")
     }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+

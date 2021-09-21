@@ -89,6 +89,7 @@ class Confirm: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUi()
+        self.navigationItem.setHidesBackButton(true, animated: true)
         navigationController?.navigationBar.barTintColor = Utils.backGroundColor
         view.backgroundColor = Utils.backGroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
