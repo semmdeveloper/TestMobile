@@ -15,6 +15,7 @@ class Utils{
     static let editprofilecolor=UIColor(rgb: 0x313E47)
     static let textfieldcolor=UIColor(rgb: 0xBBBBBB)
     static let dashboardcolor=UIColor(rgb: 0xE5E5E5)
+    static let arrivedcolor=UIColor(rgb: 0x04A6FB)
 
 }
 

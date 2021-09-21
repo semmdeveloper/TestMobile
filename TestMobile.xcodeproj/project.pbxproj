@@ -21,6 +21,8 @@
 		FA12798626F3356D00751746 /* Confirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798526F3356D00751746 /* Confirm.swift */; };
 		FA12798D26F343DD00751746 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798C26F343DD00751746 /* utils.swift */; };
 		FA12798F26F343FD00751746 /* Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798E26F343FD00751746 /* Extansions.swift */; };
+		FA9B462326FA0DD900571F74 /* CurrentProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B462226FA0DD900571F74 /* CurrentProducts.swift */; };
+		FA9B462626FA10F700571F74 /* Detailis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B462526FA10F700571F74 /* Detailis.swift */; };
 		FAF5305226F8A6C1009C8E44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */; };
 		FAF5305426F8A6DF009C8E44 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */; };
 		FAF5305626F8A6F9009C8E44 /* TrustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */; };
@@ -69,6 +71,8 @@
 		FA12798526F3356D00751746 /* Confirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confirm.swift; sourceTree = "<group>"; };
 		FA12798C26F343DD00751746 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		FA12798E26F343FD00751746 /* Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extansions.swift; sourceTree = "<group>"; };
+		FA9B462226FA0DD900571F74 /* CurrentProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProducts.swift; sourceTree = "<group>"; };
+		FA9B462526FA10F700571F74 /* Detailis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detailis.swift; sourceTree = "<group>"; };
 		FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		FA12794C26F330C100751746 /* TestMobile */ = {
 			isa = PBXGroup;
 			children = (
+				FA9B462426FA10E700571F74 /* Detailis */,
+				FA9B462126FA0D9000571F74 /* New Group */,
 				FAF530B126F91127009C8E44 /* SegmentedControlViews */,
 				FAF5304326F50DDA009C8E44 /* Dashboards */,
 				FA12798826F3434800751746 /* Products */,
@@ -177,6 +183,7 @@
 		FA12798826F3434800751746 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				FA9B462226FA0DD900571F74 /* CurrentProducts.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -202,6 +209,21 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FA9B462126FA0D9000571F74 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FA9B462426FA10E700571F74 /* Detailis */ = {
+			isa = PBXGroup;
+			children = (
+				FA9B462526FA10F700571F74 /* Detailis.swift */,
+			);
+			path = Detailis;
 			sourceTree = "<group>";
 		};
 		FAF5304326F50DDA009C8E44 /* Dashboards */ = {
@@ -361,6 +383,8 @@
 				FAF530B926F91ADE009C8E44 /* TestViewController.swift in Sources */,
 				FA12794E26F330C100751746 /* AppDelegate.swift in Sources */,
 				FAF530B526F91169009C8E44 /* UpcomingViewController.swift in Sources */,
+				FA9B462626FA10F700571F74 /* Detailis.swift in Sources */,
+				FA9B462326FA0DD900571F74 /* CurrentProducts.swift in Sources */,
 				FAF530B726F91180009C8E44 /* CompletedViewController.swift in Sources */,
 				FA12798426F3356200751746 /* Password.swift in Sources */,
 				FA12798626F3356D00751746 /* Confirm.swift in Sources */,
