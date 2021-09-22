@@ -81,10 +81,11 @@ class HomeViewController: UITableViewController{
     func addControl() {
        let segmentItems = ["Current", "Upcoming", "Completed"]
        let control = UISegmentedControl(items: segmentItems)
-        control.frame = CGRect(x: UIScreen.main.bounds.width*1, y: 0, width: (self.view.frame.width - 376), height: 50)
+        control.frame = CGRect(x: 355, y: 0.2, width: (self.view.frame.width - 335), height: 50)
         
         control.addTarget(self, action: #selector(didtapSegment(segment:)), for: .valueChanged)
         control.addTarget(self, action: #selector(didtapSegment(segment:)), for: .touchUpInside)
+        control.layer.cornerRadius = 15
        control.selectedSegmentIndex = 0
        view.addSubview(control)
         
