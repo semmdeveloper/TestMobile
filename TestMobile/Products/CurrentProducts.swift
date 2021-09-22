@@ -1,13 +1,5 @@
 
 
-//
-//  ProductCell.swift
-//  Sample_TableView
-//
-//  Created by Esat Kemal Ekren on 5.04.2018.
-//  Copyright © 2018 Esat Kemal Ekren. All rights reserved.
-//
-
 import UIKit
 
 protocol CurrentProductCellDelegate {
@@ -38,6 +30,7 @@ class CurrentproductCell : UITableViewCell {
        return myView
         
     }()
+
     let btn:UIButton={
         let btn = UIButton()
         btn.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.26, width: UIScreen.main.bounds.width*0.70, height: 48)
@@ -106,6 +99,10 @@ class CurrentproductCell : UITableViewCell {
         lbl.numberOfLines = 0
         return lbl
     }()
+    
+
+
+   
    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -118,32 +115,24 @@ class CurrentproductCell : UITableViewCell {
         addSubview(currentIMage)
         addSubview(currentName)
         addSubview(currentName2)
+
         addSubview(btn)
 
-        
-        currentIMage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 65, paddingBottom: 290, paddingRight: 30, width: 10, height: 10, enableInsets: false)
-        
-        currentLocation.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 90, paddingBottom: 290, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-        
-        currentData.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 65, paddingBottom: 190, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-        
-        currentData2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 240, paddingBottom: 190, paddingRight: 20, width: 1000, height: 100, enableInsets: false)
-        
-        currentName.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 35, paddingLeft: 65, paddingBottom: 150, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-        
-        currentName2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 35, paddingLeft: 250, paddingBottom: 150, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-        
-        
-       
-        
-
-      
-        
-        
 
         
-      
-    
+        currentIMage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 65, paddingBottom: 155, paddingRight: 30, width: 10, height: 10, enableInsets: false)
+        
+        currentLocation.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 90, paddingBottom: 155, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+        
+        currentData.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 65, paddingBottom: 35, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+        
+        currentData2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 240, paddingBottom: 35, paddingRight: 20, width: 1000, height: 100, enableInsets: false)
+        
+        currentName.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 20, paddingLeft: 65, paddingBottom: 0, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+        
+        currentName2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 20, paddingLeft: 250, paddingBottom: 0, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+        
+
     }
     
     required init?(coder aDecoder: NSCoder) {

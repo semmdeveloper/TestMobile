@@ -23,6 +23,7 @@
 		FA12798F26F343FD00751746 /* Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12798E26F343FD00751746 /* Extansions.swift */; };
 		FA9B462326FA0DD900571F74 /* CurrentProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B462226FA0DD900571F74 /* CurrentProducts.swift */; };
 		FA9B462626FA10F700571F74 /* Detailis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B462526FA10F700571F74 /* Detailis.swift */; };
+		FA9B462826FB349100571F74 /* MessageProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B462726FB349100571F74 /* MessageProducts.swift */; };
 		FAF5305226F8A6C1009C8E44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */; };
 		FAF5305426F8A6DF009C8E44 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */; };
 		FAF5305626F8A6F9009C8E44 /* TrustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */; };
@@ -30,7 +31,6 @@
 		FAF530B326F91159009C8E44 /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF530B226F91159009C8E44 /* CurrentViewController.swift */; };
 		FAF530B526F91169009C8E44 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF530B426F91169009C8E44 /* UpcomingViewController.swift */; };
 		FAF530B726F91180009C8E44 /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF530B626F91180009C8E44 /* CompletedViewController.swift */; };
-		FAF530B926F91ADE009C8E44 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF530B826F91ADE009C8E44 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +73,7 @@
 		FA12798E26F343FD00751746 /* Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extansions.swift; sourceTree = "<group>"; };
 		FA9B462226FA0DD900571F74 /* CurrentProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProducts.swift; sourceTree = "<group>"; };
 		FA9B462526FA10F700571F74 /* Detailis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detailis.swift; sourceTree = "<group>"; };
+		FA9B462726FB349100571F74 /* MessageProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProducts.swift; sourceTree = "<group>"; };
 		FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		FAF530B226F91159009C8E44 /* CurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewController.swift; sourceTree = "<group>"; };
 		FAF530B426F91169009C8E44 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		FAF530B626F91180009C8E44 /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
-		FAF530B826F91ADE009C8E44 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9B462226FA0DD900571F74 /* CurrentProducts.swift */,
+				FA9B462726FB349100571F74 /* MessageProducts.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -233,7 +234,6 @@
 				FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */,
 				FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */,
 				FAF5305726F8A709009C8E44 /* ProfileViewController.swift */,
-				FAF530B826F91ADE009C8E44 /* TestViewController.swift */,
 			);
 			path = Dashboards;
 			sourceTree = "<group>";
@@ -380,7 +380,6 @@
 			files = (
 				FA12795226F330C100751746 /* ViewController.swift in Sources */,
 				FAF5305626F8A6F9009C8E44 /* TrustViewController.swift in Sources */,
-				FAF530B926F91ADE009C8E44 /* TestViewController.swift in Sources */,
 				FA12794E26F330C100751746 /* AppDelegate.swift in Sources */,
 				FAF530B526F91169009C8E44 /* UpcomingViewController.swift in Sources */,
 				FA9B462626FA10F700571F74 /* Detailis.swift in Sources */,
@@ -391,6 +390,7 @@
 				FA12798F26F343FD00751746 /* Extansions.swift in Sources */,
 				FAF5305226F8A6C1009C8E44 /* HomeViewController.swift in Sources */,
 				FA12795026F330C100751746 /* SceneDelegate.swift in Sources */,
+				FA9B462826FB349100571F74 /* MessageProducts.swift in Sources */,
 				FAF5305426F8A6DF009C8E44 /* MessageViewController.swift in Sources */,
 				FA12798226F3355700751746 /* Profile.swift in Sources */,
 				FAF5305826F8A709009C8E44 /* ProfileViewController.swift in Sources */,

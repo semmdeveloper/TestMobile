@@ -11,5 +11,12 @@ struct Currentproduct {
         var currentData2 : String
         var currentName : String
         var currentName2 : String
+}
 
+struct Messageproduct {
+        var messageName : String
+        var messageImage : UIImage
+        var messageInfo : String
+        var messageTime : String
+      
 }
