@@ -107,6 +107,21 @@ class Profil: UIViewController {
         navigationController?.navigationBar.barTintColor = Utils.backGroundColor
         view.backgroundColor = Utils.backGroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let height = UIScreen.main.bounds.height
+        
+        if height > 800.0
+        {
+            print("large screen")
+        }
+        else if height > 700.0
+        {
+            print("medium screen")
+        }
+        else
+        {
+            print("small screen")
+        }
     }
     private func setUpUi(){
         view.addSubview(btn)

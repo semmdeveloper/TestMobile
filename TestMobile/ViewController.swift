@@ -6,14 +6,30 @@ class ViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBarControllers()
-        view.backgroundColor = Utils.backGroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = false
+        UITabBar.appearance().backgroundColor = UIColor.white
+        
+        let height = UIScreen.main.bounds.height
+        
+        if height > 800.0
+        {
+            print("large screen")
+        }
+        else if height > 700.0
+        {
+            print("medium screen")
+        }
+        else
+        {
+            print("small screen")
+        }
         
     }
     func setTabBarControllers() {
         self.setViewControllers([HomeViewController(), MessageViewController(), TripsViewController(), ProfileViewController()].map{
             UINavigationController(rootViewController: $0)
         }, animated: true)
+        view.backgroundColor = UIColor.white
         tabBar.items?[0].image=UIImage(named: "Vector 1.svg")
         tabBar.items?[0].title="Home"
         

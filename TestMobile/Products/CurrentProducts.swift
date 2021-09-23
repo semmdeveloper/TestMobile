@@ -23,6 +23,14 @@ class CurrentproductCell : UITableViewCell {
   
  }
 }
+    private var label : UILabel {
+        let label=UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+        label.center = CGPoint(x: 122, y: 300)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "Tracking"
+        return label
+    }
+    
     private let View :UIView = {
         let myView=UIView(frame: CGRect(x: 20 , y: 70, width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.250));
         myView.backgroundColor = UIColor.white
@@ -58,7 +66,7 @@ class CurrentproductCell : UITableViewCell {
     }()
     
     private let currentIMage: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "location"))
+        let imgView = UIImageView(image: #imageLiteral(resourceName: "location")    )
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
         return imgView
@@ -108,6 +116,7 @@ class CurrentproductCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor=Utils.backGroundColor
+        addSubview(label)
         addSubview(View)
         addSubview(currentData)
         addSubview(currentData2)

@@ -41,6 +41,8 @@ class Vertification: UIViewController {
         navigationController?.navigationBar.barTintColor = Utils.backGroundColor
         view.backgroundColor = Utils.backGroundColor
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
     }
     private func setUpUi(){
         view.addSubview(emailTF)

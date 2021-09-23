@@ -17,6 +17,8 @@ class Utils{
     static let dashboardcolor=UIColor(rgb: 0xE5E5E5)
     static let arrivedcolor=UIColor(rgb: 0x04A6FB)
     static let imgcolor=UIColor(rgb: 0xEEEEEE)
+    static let navbarColor=UIColor(rgb: 0x313E47)
+    static let numberColor=UIColor(rgb: 0xE5E5E6)
 
 }
 

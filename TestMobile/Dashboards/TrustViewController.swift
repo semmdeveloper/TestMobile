@@ -12,8 +12,23 @@ class TripsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        view.backgroundColor=UIColor.purple
+        view.backgroundColor=Utils.dashboardcolor
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let height = UIScreen.main.bounds.height
+        
+        if height > 800.0
+        {
+            print("large screen")
+        }
+        else if height > 700.0
+        {
+            print("medium screen")
+        }
+        else
+        {
+            print("small screen")
+        }
     }
     func configureNavigationBar(){
         navigationController?.navigationBar.barTintColor = Utils.backGroundColor

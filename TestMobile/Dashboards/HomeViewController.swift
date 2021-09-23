@@ -19,6 +19,21 @@ class HomeViewController: UITableViewController{
         self.navigationController?.navigationBar.prefersLargeTitles = false
         addControl()
         tableView.separatorColor = .clear
+        
+        let height = UIScreen.main.bounds.height
+        
+        if height > 800.0
+        {
+            print("large screen")
+        }
+        else if height > 700.0
+        {
+            print("medium screen")
+        }
+        else
+        {
+            print("small screen")
+        }
       
       }
     
@@ -95,22 +110,38 @@ class HomeViewController: UITableViewController{
     
     
     func configureNavigationBar(){
-        navigationController?.navigationBar.barTintColor = Utils.backGroundColor
+        navigationController?.navigationBar.barTintColor = Utils.dashboardcolor
 
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Vector (1)").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuToggle))
         
+        var view = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        view.backgroundColor = Utils.navbarColor
+        let barButtonItem = UIBarButtonItem(customView: view)
+        self.navigationItem.rightBarButtonItem = barButtonItem
+        view.layer.cornerRadius = 20
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Mask Copy 10").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(profile))
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 13, height: 17))
+        let titleImageView = UIImageView(image: UIImage(named: "Shap"))
+        titleImageView.frame = CGRect(x: 151, y: 0, width: titleView.frame.width, height: titleView.frame.height)
+         titleView.addSubview(titleImageView)
+         navigationItem.titleView = titleView
+        
+      
+        
+        
+        
+        
+
+
     }
     @objc func handleMenuToggle(){
         print("toggle menu..")
     }
     
-    @objc func profile(){
-        print(profile)
-    }
-    override func didReceiveMemoryWarning() {
+    
+    
+      override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
    

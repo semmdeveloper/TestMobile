@@ -25,6 +25,21 @@ class MessageViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = false
         searchController.searchBar.placeholder = "Search Orders"
         searchController.searchBar.frame(forAlignmentRect: CGRect(x: 12, y: 12, width: 12, height: 22))
+            
+            let height = UIScreen.main.bounds.height
+            
+            if height > 800.0
+            {
+                print("large screen")
+            }
+            else if height > 700.0
+            {
+                print("medium screen")
+            }
+            else
+            {
+                print("small screen")
+            }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
