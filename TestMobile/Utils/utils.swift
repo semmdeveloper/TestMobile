@@ -1,9 +1,3 @@
-//
-//  Utils.swift
-//  TestMobile
-//
-//  Created by الله أكبر on 16/09/21.
-//
 
 import Foundation
 import UIKit
@@ -19,6 +13,7 @@ class Utils{
     static let imgcolor=UIColor(rgb: 0xEEEEEE)
     static let navbarColor=UIColor(rgb: 0x313E47)
     static let numberColor=UIColor(rgb: 0xE5E5E6)
+    static let trackingColor=UIColor(rgb: 0xD8F5E2)
 
 }
 

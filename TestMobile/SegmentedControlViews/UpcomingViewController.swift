@@ -31,16 +31,7 @@ class UpcomingViewController: UITableViewController {
 
 
     }
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        var label : UILabel = UILabel()
-//        if (section == 0){ label.text = "26 Feb, 2020 See all"
-//        }else if (section == 1){ label.textColor = .black
-//    label.text = ""
-//        } else if(section==2){ label.text = ""}
-//            return label
-//    }
-//
-    
+
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

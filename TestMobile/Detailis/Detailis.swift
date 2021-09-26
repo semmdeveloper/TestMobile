@@ -1,16 +1,17 @@
-//
-//  Created by الله أكبر on 13/09/21.
-//
 
 import UIKit
 
 struct Currentproduct {
-        var currentLocation : String
-        var currentImage : UIImage
-        var currentData : String
-        var currentData2 : String
-        var currentName : String
-        var currentName2 : String
+    var currentLocation : String
+    var currentImage : UIImage
+    var currentData : String
+    var currentData2 : String
+    var currentName : String
+    var currentName2 : String
+
+//for tracking
+var trackingtTime : String
+var trackingImage2 : UIImage
 }
 
 struct Messageproduct {
@@ -36,6 +37,10 @@ struct Upcomingproduct{
     var upcomingLocation : String
     var upcomingLocation2 : String
     
-    
-    
+
+
+      
+
+
 }
+
