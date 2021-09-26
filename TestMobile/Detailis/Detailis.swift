@@ -19,6 +19,8 @@ struct Messageproduct {
         var messageImage : UIImage
         var messageInfo : String
         var messageTime : String
+        var messageChats : String
+
       
 }
 struct Upcomingproduct{
