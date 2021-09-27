@@ -3,13 +3,13 @@
 
 import UIKit
 
-protocol UpcomingProductCellDelegate {
-    func increaseNumber(cell: UpcomingProductCellDelegate,number : Int)
-    func decreaseNumber(cell: UpcomingProductCellDelegate,number : Int)
+protocol UpcomingLoactionProductCellDelegate {
+    func increaseNumber(cell: UpcomingLoactionProductCellDelegate,number : Int)
+    func decreaseNumber(cell: UpcomingLoactionProductCellDelegate,number : Int)
 }
 
-class UpcomingproductCell : UITableViewCell {
-    var delegate : UpcomingProductCellDelegate?
+class UpcomingloactionproductCell : UITableViewCell {
+    var delegate : UpcomingLoactionProductCellDelegate?
     let minValue = 0
     var Upcomingproduct : Upcomingproduct? {
         didSet {
@@ -30,37 +30,30 @@ class UpcomingproductCell : UITableViewCell {
 
  }
 }
-    private var label : UILabel {
-        let label=UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 122, y: 70)
-        label.text = "Monday, September 27"
-        return label
-    }
-    
     
     private let View :UIView = {
-        let myView=UIView(frame: CGRect(x: 15 , y: 100, width: 343, height: UIScreen.main.bounds.height*0.18));
+        let myView=UIView(frame: CGRect(x: 15 , y: 10, width: 343, height: UIScreen.main.bounds.height*0.18));
         myView.backgroundColor = UIColor.white
         myView.layer.cornerRadius=10
        return myView
 
     }()
     private let View2 :UIView = {
-        let myView=UIView(frame: CGRect(x: 40 , y: 130, width: 25, height: 25));
+        let myView=UIView(frame: CGRect(x: 40 , y: 40, width: 25, height: 25));
         myView.backgroundColor = Utils.numberColor
         myView.layer.cornerRadius=13
        return myView
 
     }()
     private let View3 :UIView = {
-        let myView=UIView(frame: CGRect(x: 40 , y: 190, width: 25, height: 25));
+        let myView=UIView(frame: CGRect(x: 40 , y: 100, width: 25, height: 25));
         myView.backgroundColor = Utils.numberColor
         myView.layer.cornerRadius=13
        return myView
 
     }()
     private let View4 :UIView = {
-        let myView=UIView(frame: CGRect(x: 300 , y: 155, width: 40, height: 40));
+        let myView=UIView(frame: CGRect(x: 300 , y: 65, width: 40, height: 40));
         myView.backgroundColor = UIColor.white
         myView.layer.cornerRadius=20
        return myView
@@ -175,7 +168,6 @@ class UpcomingproductCell : UITableViewCell {
      override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
          super.init(style: style, reuseIdentifier: reuseIdentifier)
          backgroundColor = Utils.dashboardcolor
-           addSubview(label)
            addSubview(View)
          addSubview(View2)
          addSubview(View3)
@@ -196,35 +188,35 @@ class UpcomingproductCell : UITableViewCell {
          addSubview(upcomingImage3)
          
          
-         upcomingNumber.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 50, paddingBottom: 0, paddingRight: 0, width: 0, height: 10, enableInsets: false)
+         upcomingNumber.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 50, paddingBottom: 65, paddingRight: 0, width: 0, height: 10, enableInsets: false)
          
-         upcomingNumber2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 143, paddingLeft: 48, paddingBottom: 0, paddingRight: 0, width: 0, height: 10, enableInsets: false)
+         upcomingNumber2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 60, paddingLeft: 49, paddingBottom: 0, paddingRight: 0, width: 0, height: 10, enableInsets: false)
          
-         upcomingLine.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 86, paddingLeft: 51, paddingBottom: 0, paddingRight: 0, width: 0, height: 20, enableInsets: false)
+         upcomingLine.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 51, paddingBottom: 6, paddingRight: 0, width: 0, height: 20, enableInsets: false)
          
-         upcomingName.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingName.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 85, paddingBottom: 65, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingName2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 143, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingName2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 60, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingData.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 55, paddingLeft: 100, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingData.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 100, paddingBottom: 35, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingData2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 175, paddingLeft: 100, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingData2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 85, paddingLeft: 100, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingImage3.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 55, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingImage3.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 85, paddingBottom: 35, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingImage2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 175, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingImage2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 85, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingPoint.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 130, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingPoint.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 130, paddingBottom: 65, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingPoint2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 143, paddingLeft: 130, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingPoint2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 60, paddingLeft: 130, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingLocation.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 150, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingLocation.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 150, paddingBottom: 65, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingLocation2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil,paddingTop: 143, paddingLeft: 150, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingLocation2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil,paddingTop: 60, paddingLeft: 150, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingImage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 102, paddingLeft: 313, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+         upcomingImage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 8, paddingLeft: 313, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-//         
+//
      }
     
     required init?(coder: NSCoder) {

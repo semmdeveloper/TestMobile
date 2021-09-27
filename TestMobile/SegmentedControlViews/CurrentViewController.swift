@@ -35,7 +35,7 @@ class CurrentViewController: UITableViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TrackingproductCell
             
             let currentLastItem = currentproduct[indexPath.row]
-            cell.isUserInteractionEnabled = true
+           
             cell.Currentproduct = currentLastItem
             return cell
         }

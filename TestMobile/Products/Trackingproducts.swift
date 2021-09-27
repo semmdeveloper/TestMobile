@@ -37,7 +37,7 @@ class TrackingproductCell : UITableViewCell {
         
     }()
     private let View3 :UIView = {
-        let myView=UIView(frame: CGRect(x: 33, y: 25, width: 70, height: 70));
+        let myView=UIView(frame: CGRect(x: 33, y: 23, width: 70, height: 70));
         myView.backgroundColor = Utils.trackingColor
         myView.layer.cornerRadius=15
        return myView
@@ -72,7 +72,7 @@ class TrackingproductCell : UITableViewCell {
     private let trackingImage2: UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "location")    )
         imgView.contentMode = .scaleAspectFit
-        imgView.frame = CGRect(x: 57, y: 50, width: 20, height: 20)
+        imgView.frame = CGRect(x: 57, y: 47, width: 20, height: 20)
         imgView.clipsToBounds = true
         return imgView
     }()
