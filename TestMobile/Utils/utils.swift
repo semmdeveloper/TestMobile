@@ -16,6 +16,7 @@ class Utils{
     static let trackingColor=UIColor(rgb: 0xD8F5E2)
     static let chatColor=UIColor(rgb: 0xFFCCCC)
     static let chatColor2=UIColor(rgb: 0x313E47)
+    static let homeColor2=UIColor(rgb: 0xE5FFCC)
 
 
 }

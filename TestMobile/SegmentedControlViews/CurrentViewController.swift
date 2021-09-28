@@ -63,7 +63,7 @@ class CurrentViewController: UITableViewController{
             return UIScreen.main.bounds.height*0.5
             
         }else{
-            return UIScreen.main.bounds.height*0.15
+            return UIScreen.main.bounds.height*0.1150
         }
     }
                 
@@ -74,32 +74,32 @@ class CurrentViewController: UITableViewController{
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
         
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v2")))
-      
         
+    
         
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v3")))
-      
         
-        
+    
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
         
-        
-        
+    
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
         
-        
-        
+    
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
         
-        
-        
+    
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
-      
         
-      
+    
+        currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
         
-
+    
+        currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
         
+    
+        
+    
       
         
       

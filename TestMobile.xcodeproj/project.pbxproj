@@ -28,6 +28,7 @@
 		FAC03DA82700FBC20075C1CB /* Trackingproducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DA72700FBC20075C1CB /* Trackingproducts.swift */; };
 		FAC03DAA27011C6D0075C1CB /* MessageLIveChatProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DA927011C6D0075C1CB /* MessageLIveChatProducts.swift */; };
 		FAC03DAC270199920075C1CB /* UpcomingLocationProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DAB270199920075C1CB /* UpcomingLocationProducts.swift */; };
+		FAC03DAE27031D000075C1CB /* CurrentCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DAD27031D000075C1CB /* CurrentCellViewController.swift */; };
 		FAF5305226F8A6C1009C8E44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */; };
 		FAF5305426F8A6DF009C8E44 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */; };
 		FAF5305626F8A6F9009C8E44 /* TrustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */; };
@@ -82,6 +83,7 @@
 		FAC03DA72700FBC20075C1CB /* Trackingproducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trackingproducts.swift; sourceTree = "<group>"; };
 		FAC03DA927011C6D0075C1CB /* MessageLIveChatProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLIveChatProducts.swift; sourceTree = "<group>"; };
 		FAC03DAB270199920075C1CB /* UpcomingLocationProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingLocationProducts.swift; sourceTree = "<group>"; };
+		FAC03DAD27031D000075C1CB /* CurrentCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCellViewController.swift; sourceTree = "<group>"; };
 		FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				FAC03DA72700FBC20075C1CB /* Trackingproducts.swift */,
 				FAC03DA927011C6D0075C1CB /* MessageLIveChatProducts.swift */,
 				FAC03DAB270199920075C1CB /* UpcomingLocationProducts.swift */,
+				FAC03DAD27031D000075C1CB /* CurrentCellViewController.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				FA12798426F3356200751746 /* Password.swift in Sources */,
 				FAC03DA82700FBC20075C1CB /* Trackingproducts.swift in Sources */,
 				FA12798626F3356D00751746 /* Confirm.swift in Sources */,
+				FAC03DAE27031D000075C1CB /* CurrentCellViewController.swift in Sources */,
 				FA12798F26F343FD00751746 /* Extansions.swift in Sources */,
 				FAF5305226F8A6C1009C8E44 /* HomeViewController.swift in Sources */,
 				FA12795026F330C100751746 /* SceneDelegate.swift in Sources */,

@@ -16,7 +16,7 @@ class CurrentproductCell : UITableViewCell {
             currentData2.text = currentproduct?.currentData2
             currentName.text = currentproduct?.currentName
             currentName2.text = currentproduct?.currentName2
-            
+          
   
   
  }
@@ -35,6 +35,26 @@ class CurrentproductCell : UITableViewCell {
         let myView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.05 , y: 60, width: UIScreen.main.bounds.width*0.90, height: UIScreen.main.bounds.height*0.3300));
         myView.backgroundColor = UIColor.white
         myView.layer.cornerRadius=25
+       return myView
+        
+    }()
+    
+    private let customView2 :UIView = {
+        let myView = UIView();
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=0
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+        
+    }()
+    
+    private let customView3 :UIView = {
+        let myView = UIView();
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=0
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
        return myView
         
     }()
@@ -61,12 +81,16 @@ class CurrentproductCell : UITableViewCell {
         lbl.textColor = .black
         lbl.font = UIFont.boldSystemFont(ofSize: 12)
         lbl.textAlignment = .left
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         lbl.numberOfLines = 0
         return lbl
     }()
     
     private let currentIMage: UIImageView = {
-        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        let imgView = UIImageView()
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleAspectFit
         return imgView
     }()
     
@@ -76,6 +100,8 @@ class CurrentproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 12)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     
@@ -85,6 +111,8 @@ class CurrentproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 13)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     
@@ -94,6 +122,8 @@ class CurrentproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 13)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     
@@ -103,51 +133,86 @@ class CurrentproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 13)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     
 
 
    
-   
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         self.backgroundColor=Utils.backGroundColor
-
         addSubview(customView)
         addSubview(label)
-        
-        customView.addSubview(currentLocation)
-        customView.addSubview(currentData)
-        customView.addSubview(currentData2)
-        customView.addSubview(currentIMage)
-        customView.addSubview(currentName)
-        customView.addSubview(currentName2)
-
+        customView.addSubview(customView2)
+        customView.addSubview(customView3)
+        customView2.addSubview(currentLocation)
+        customView3.addSubview(currentData)
+        customView3.addSubview(currentData2)
+        customView2.addSubview(currentIMage)
+        customView3.addSubview(currentName)
+        customView3.addSubview(currentName2)
         customView.addSubview(btn)
-
+        
+//        MARK: - CustomView2
+        
+        customView2.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+        customView2.topAnchor.constraint(equalTo: customView.topAnchor, constant: 10).isActive = true
+        customView2.widthAnchor.constraint(equalToConstant: customView.bounds.width*0.8).isActive = true
+        customView2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+//        MARK: - CurrentImageView
+        
+        currentIMage.centerYAnchor.constraint(equalTo: customView2.centerYAnchor).isActive = true
+        currentIMage.leftAnchor.constraint(equalTo: customView2.leftAnchor, constant: 10).isActive = true
+        currentIMage.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        currentIMage.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        
+//        MARK: - CurrentLocation
+        
+        currentLocation.centerYAnchor.constraint(equalTo: customView2.centerYAnchor).isActive = true
+        currentLocation.leftAnchor.constraint(equalTo: currentIMage.rightAnchor, constant: 10).isActive = true
+        
+//        MARK: - CustomView3
+                       
+        customView3.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
+        customView3.topAnchor.constraint(equalTo: customView2.topAnchor, constant: 80).isActive = true
+        customView3.widthAnchor.constraint(equalToConstant: customView.bounds.width*0.8).isActive = true
+        customView3.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+//        MARK: - CurrentData
+        currentData.topAnchor.constraint(equalTo: customView3.topAnchor, constant: 5).isActive = true
+        currentData.leftAnchor.constraint(equalTo: customView3.leftAnchor, constant: 10).isActive = true
+        
+//        MARK: - CurrentName
+        currentName.topAnchor.constraint(equalTo: customView3.topAnchor, constant: 25).isActive = true
+        currentName.leftAnchor.constraint(equalTo: customView3.leftAnchor, constant: 10).isActive = true
+        
+//        MARK: - CurrentData2
+        currentData2.topAnchor.constraint(equalTo: customView3.topAnchor, constant: 5).isActive = true
+        currentData2.rightAnchor.constraint(equalTo: customView3.rightAnchor, constant: -10).isActive = true
+        
+//        MARK: - CurrentName2
+        currentName2.topAnchor.constraint(equalTo: customView3.topAnchor, constant: 25).isActive = true
+        currentName2.rightAnchor.constraint(equalTo: customView3.rightAnchor, constant: -10).isActive = true
+        
+        
+        
+        
+        
+        
 
         
-        currentIMage.anchor(top: customView.topAnchor, left:  customView.leftAnchor, bottom: nil, right: nil, paddingTop: 15, paddingLeft: 30, paddingBottom: 220 , paddingRight: 20, width: 10, height: 10, enableInsets: false)
-
-        currentLocation.anchor(top: customView.topAnchor, left: currentIMage.leftAnchor, bottom: customView.bottomAnchor, right: customView.rightAnchor, paddingTop: 15, paddingLeft: 50, paddingBottom: 220, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-
-        currentData.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 10, paddingLeft: 55, paddingBottom: 35, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-        
-        currentData2.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 10, paddingLeft: 205, paddingBottom: 35, paddingRight: 45, width: 1000, height: 100, enableInsets: false)
-        
-        currentName2.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 50, paddingLeft: 205, paddingBottom: 35, paddingRight: 45, width: 1000, height: 100, enableInsets: false)
-
-        currentName.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 50, paddingLeft: 55, paddingBottom: 35, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-
-
         
     
-
-        
-
+   
     }
+    
+  
+       
+   
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

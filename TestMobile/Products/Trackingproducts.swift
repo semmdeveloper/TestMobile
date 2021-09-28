@@ -16,15 +16,11 @@ class TrackingproductCell : UITableViewCell {
         didSet {
    
             currentData.text = currentproduct?.currentData
-            currentIMage.image = currentproduct?.currentImage
             currentLocation.text = currentproduct?.currentLocation
             currentName.text = currentproduct?.currentName
             trackingTime.text = currentproduct?.trackingtTime
             trackingImage2.image = currentproduct?.trackingImage2
-            
-            
-  
-  
+   
  }
 }
     
@@ -37,9 +33,41 @@ class TrackingproductCell : UITableViewCell {
         
     }()
     private let View3 :UIView = {
-        let myView=UIView(frame: CGRect(x: UIScreen.main.bounds.width*0, y: UIScreen.main.bounds.height*0, width: 0, height: 0));
-        myView.backgroundColor = Utils.trackingColor
+        let myView=UIView()
+        myView.backgroundColor = Utils.homeColor2
         myView.layer.cornerRadius=15
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+        
+    }()
+    
+    private let View4 :UIView = {
+        let myView=UIView()
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=0
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+        
+    }()
+    
+    private let View5 :UIView = {
+        let myView=UIView()
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=0
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+        
+    }()
+    
+    private let View6 :UIView = {
+        let myView=UIView()
+        myView.backgroundColor = UIColor.green
+        myView.layer.cornerRadius=3
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
        return myView
         
     }()
@@ -50,20 +78,17 @@ class TrackingproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 13)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
-    }()
-    
-    private let currentIMage: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "location")    )
-        imgView.contentMode = .scaleAspectFit
-        imgView.clipsToBounds = true
-        return imgView
     }()
     
     private let trackingImage2: UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "location")    )
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleAspectFit
         return imgView
     }()
     
@@ -74,6 +99,8 @@ class TrackingproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 10)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     
@@ -84,6 +111,8 @@ class TrackingproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 10)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     
@@ -93,6 +122,8 @@ class TrackingproductCell : UITableViewCell {
         lbl.font = UIFont.boldSystemFont(ofSize: 12)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     
@@ -107,31 +138,71 @@ class TrackingproductCell : UITableViewCell {
         self.backgroundColor=Utils.backGroundColor
         addSubview(View2)
         View2.addSubview(View3)
-        View2.addSubview(currentName)
-        View2.addSubview(trackingTime)
-        View2.addSubview(currentData)
-        View2.addSubview(currentLocation)
-        View2.addSubview(currentIMage)
-        View2.addSubview(trackingImage2)
+        View2.addSubview(View4)
+        View2.addSubview(View5)
+        View5.addSubview(View6)
+        View4.addSubview(currentName)
+        View5.addSubview(trackingTime)
+        View4.addSubview(currentData)
+        View4.addSubview(currentLocation)
+        View3.addSubview(trackingImage2)
+        
+//        MARK: - UIVIEW
+        View3.leftAnchor.constraint(equalTo: View2.leftAnchor, constant: 6).isActive = true
+        View3.widthAnchor.constraint(equalToConstant: View2.bounds.width*0.1800).isActive = true
+        View3.topAnchor.constraint(equalTo: View2.topAnchor, constant: 6).isActive = true
+        View3.bottomAnchor.constraint(equalTo: View2.bottomAnchor, constant: -6).isActive = true
+        View3.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+//        MARK: - UIImage
+        trackingImage2.centerXAnchor.constraint(equalTo: View3.centerXAnchor).isActive = true
+        trackingImage2.centerYAnchor.constraint(equalTo: View3.centerYAnchor).isActive = true
+        
+//        MARK: - UIVIEW
+        View4.leftAnchor.constraint(equalTo: View3.rightAnchor, constant: 15).isActive = true
+        View4.widthAnchor.constraint(equalToConstant: View2.bounds.width*0.4500).isActive = true
+        View4.topAnchor.constraint(equalTo: View2.topAnchor, constant: 6).isActive = true
+        View4.bottomAnchor.constraint(equalTo: View2.bottomAnchor, constant: -6).isActive = true
+        View4.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+//        MARK: - UILabelLocation
+        
+        currentLocation.topAnchor.constraint(equalTo: View4.topAnchor, constant: 5).isActive = true
+        currentLocation.leftAnchor.constraint(equalTo: View4.leftAnchor, constant: 5).isActive = true
+
+        
+//        MARK: - UILabelName
+        
+        currentName.leftAnchor.constraint(equalTo: View4.leftAnchor, constant: 5).isActive = true
+        currentName.centerYAnchor.constraint(equalTo: View4.centerYAnchor).isActive = true
+        
+//        MARK: - UILabelData
+        currentData.bottomAnchor.constraint(equalTo: View4.bottomAnchor, constant: -5).isActive = true
+        currentData.leftAnchor.constraint(equalTo: View4.leftAnchor, constant: 5).isActive = true
+        
+//        MARK: - UIView
+        
+        View5.leftAnchor.constraint(equalTo: View4.rightAnchor, constant: 10).isActive = true
+        View5.rightAnchor.constraint(equalTo: View2.rightAnchor, constant: -6).isActive = true
+        View5.widthAnchor.constraint(equalToConstant: View2.bounds.width*0.2500).isActive = true
+        View5.topAnchor.constraint(equalTo: View2.topAnchor, constant: 6).isActive = true
+        View5.bottomAnchor.constraint(equalTo: View2.bottomAnchor, constant: -6).isActive = true
+        View5.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+//       MARK: - UILabel
+        trackingTime.rightAnchor.constraint(equalTo: View5.rightAnchor,constant: -5).isActive = true
+        trackingTime.centerYAnchor.constraint(equalTo: View5.centerYAnchor).isActive = true
+        
+//        MARK: UIViewPoint
+        View6.widthAnchor.constraint(equalToConstant: 8).isActive = true
+        View6.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        View6.leftAnchor.constraint(equalTo: View5.leftAnchor, constant: 5).isActive = true
+        View6.centerYAnchor.constraint(equalTo: View5.centerYAnchor).isActive = true
+
+        
 
 
-        currentLocation.anchor(top: View2.topAnchor, left: View3.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 10, paddingLeft: 100, paddingBottom: 60, paddingRight: 0, width: 30, height: 30, enableInsets: false)
-        
-        currentName.anchor(top: View2.topAnchor, left: View3.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 10, paddingLeft: 100, paddingBottom: 10, paddingRight: 0, width: 30, height: 30, enableInsets: false)
-        
-        trackingTime.anchor(top: View2.topAnchor, left: currentName.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 8, paddingLeft: 150, paddingBottom: 13, paddingRight: 15, width: 0, height: 0, enableInsets: false)
-
-        
-        currentData.anchor(top: View2.topAnchor, left: View3.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 60, paddingLeft: 100, paddingBottom: 10, paddingRight: 30, width: 30, height: 30, enableInsets: false)
-
-        
-        View2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 0, height: 10, enableInsets: false)
-        
-        trackingImage2.anchor(top: View3.topAnchor, left: View3.leftAnchor, bottom: View3.bottomAnchor, right: View3.rightAnchor, paddingTop: 25, paddingLeft: 25, paddingBottom: 25, paddingRight: 25, width: 0, height: 0, enableInsets: false)
-        
-        View3.anchor(top: View2.topAnchor, left: View2.leftAnchor, bottom: View2.bottomAnchor, right: currentName.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: UIScreen.main.bounds.width*0.7, width: 0, height: 0, enableInsets: false)
-        
-     
+ 
      
       
 
