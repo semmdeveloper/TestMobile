@@ -1,23 +1,21 @@
-
-
 import UIKit
 
-protocol CurrentProductCellDelegate {
-    func increaseNumber(cell: CurrentProductCellDelegate,number : Int)
-    func decreaseNumber(cell: CurrentProductCellDelegate,number : Int)
+protocol CurrentProductCelldelegate {
+    func increaseNumber(cell: CurrentProductCelldelegate,number : Int)
+    func decreaseNumber(cell: CurrentProductCelldelegate,number : Int)
 }
 
 class CurrentproductCell : UITableViewCell {
-    var delegate : CurrentProductCellDelegate?
+    var delegate : CurrentProductCelldelegate?
     let minValue = 0
-    var Currentproduct : Currentproduct? {
+    var currentproduct : Currentproduct? {
         didSet {
-            currentData.text = Currentproduct?.currentData
-            currentIMage.image = Currentproduct?.currentImage
-            currentLocation.text = Currentproduct?.currentLocation
-            currentData2.text = Currentproduct?.currentData2
-            currentName.text = Currentproduct?.currentName
-            currentName2.text = Currentproduct?.currentName2
+            currentData.text = currentproduct?.currentData
+            currentIMage.image = currentproduct?.currentImage
+            currentLocation.text = currentproduct?.currentLocation
+            currentData2.text = currentproduct?.currentData2
+            currentName.text = currentproduct?.currentName
+            currentName2.text = currentproduct?.currentName2
             
   
   
@@ -25,14 +23,16 @@ class CurrentproductCell : UITableViewCell {
 }
     private var label : UILabel {
         let label=UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 122, y: 300)
+        label.center = CGPoint(x: 122, y: UIScreen.main.bounds.height*0.4500)
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.text = "Tracking"
         return label
     }
     
-    private let View :UIView = {
-        let myView=UIView(frame: CGRect(x: 20 , y: 70, width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.250));
+
+    
+    private let customView :UIView = {
+        let myView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.05 , y: 60, width: UIScreen.main.bounds.width*0.90, height: UIScreen.main.bounds.height*0.3300));
         myView.backgroundColor = UIColor.white
         myView.layer.cornerRadius=25
        return myView
@@ -41,8 +41,8 @@ class CurrentproductCell : UITableViewCell {
 
     let btn:UIButton={
         let btn = UIButton()
-        btn.frame = CGRect(x: UIScreen.main.bounds.width*0.15, y: UIScreen.main.bounds.height*0.26, width: UIScreen.main.bounds.width*0.70, height: 48)
-        btn.backgroundColor = Utils.arrivedcolor
+        btn.frame = CGRect(x: UIScreen.main.bounds.width*0.11, y: UIScreen.main.bounds.height*0.23, width: UIScreen.main.bounds.width*0.70, height: 48)
+        btn.backgroundColor = Utils.buttonColor
         btn.layer.cornerRadius = 15
         btn.setTitle("Arrived", for: .normal)
         btn.title(for: .normal)
@@ -66,9 +66,7 @@ class CurrentproductCell : UITableViewCell {
     }()
     
     private let currentIMage: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "location")    )
-        imgView.contentMode = .scaleAspectFit
-        imgView.clipsToBounds = true
+        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         return imgView
     }()
     
@@ -116,30 +114,37 @@ class CurrentproductCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.backgroundColor=Utils.backGroundColor
+
+        addSubview(customView)
         addSubview(label)
-        addSubview(View)
-        addSubview(currentData)
-        addSubview(currentData2)
-        addSubview(currentLocation)
-        addSubview(currentIMage)
-        addSubview(currentName)
-        addSubview(currentName2)
+        
+        customView.addSubview(currentLocation)
+        customView.addSubview(currentData)
+        customView.addSubview(currentData2)
+        customView.addSubview(currentIMage)
+        customView.addSubview(currentName)
+        customView.addSubview(currentName2)
 
-        addSubview(btn)
+        customView.addSubview(btn)
 
 
         
-        currentIMage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 65, paddingBottom: 155, paddingRight: 30, width: 10, height: 10, enableInsets: false)
+        currentIMage.anchor(top: customView.topAnchor, left:  customView.leftAnchor, bottom: nil, right: nil, paddingTop: 15, paddingLeft: 30, paddingBottom: 220 , paddingRight: 20, width: 10, height: 10, enableInsets: false)
+
+        currentLocation.anchor(top: customView.topAnchor, left: currentIMage.leftAnchor, bottom: customView.bottomAnchor, right: customView.rightAnchor, paddingTop: 15, paddingLeft: 50, paddingBottom: 220, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+
+        currentData.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 10, paddingLeft: 55, paddingBottom: 35, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
         
-        currentLocation.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 5, paddingLeft: 90, paddingBottom: 155, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+        currentData2.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 10, paddingLeft: 205, paddingBottom: 35, paddingRight: 45, width: 1000, height: 100, enableInsets: false)
         
-        currentData.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 65, paddingBottom: 35, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+        currentName2.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 50, paddingLeft: 205, paddingBottom: 35, paddingRight: 45, width: 1000, height: 100, enableInsets: false)
+
+        currentName.anchor(top: customView .topAnchor, left: customView .leftAnchor, bottom: customView .bottomAnchor, right: customView .rightAnchor,  paddingTop: 50, paddingLeft: 55, paddingBottom: 35, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+
+
         
-        currentData2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 10, paddingLeft: 240, paddingBottom: 35, paddingRight: 20, width: 1000, height: 100, enableInsets: false)
-        
-        currentName.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 20, paddingLeft: 65, paddingBottom: 0, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
-        
-        currentName2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 20, paddingLeft: 250, paddingBottom: 0, paddingRight: 0, width: 1000, height: 100, enableInsets: false)
+    
+
         
 
     }

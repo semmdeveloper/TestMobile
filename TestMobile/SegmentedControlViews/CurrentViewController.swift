@@ -27,7 +27,7 @@ class CurrentViewController: UITableViewController{
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CurrentproductCell
             let currentLastItem = currentproduct[indexPath.row]
             cell.isUserInteractionEnabled = true
-            cell.Currentproduct = currentLastItem
+            cell.currentproduct = currentLastItem
             return cell
         }else{
             
@@ -36,7 +36,7 @@ class CurrentViewController: UITableViewController{
             
             let currentLastItem = currentproduct[indexPath.row]
            
-            cell.Currentproduct = currentLastItem
+            cell.currentproduct = currentLastItem
             return cell
         }
     }
@@ -60,16 +60,16 @@ class CurrentViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(indexPath.row==0){
-            return UIScreen.main.bounds.height*0.4
+            return UIScreen.main.bounds.height*0.5
             
         }else{
-            return UIScreen.main.bounds.height*0.1400
+            return UIScreen.main.bounds.height*0.15
         }
     }
                 
     func createProductArray() {
     
-        currentproduct.append(Currentproduct(currentLocation: "12503 Apex Great Basin Way", currentImage: #imageLiteral(resourceName: "location") , currentData: "13 Sep, 2021 ", currentData2: "18 Sep, 2021", currentName: "Fort Gibson, OK", currentName2: "Portlan, TX", trackingtTime: "",trackingImage2: UIImage()))
+        currentproduct.append(Currentproduct(currentLocation: "12503 Apex Great Basin Way", currentImage: #imageLiteral(resourceName: "11") , currentData: "13 Sep, 2021 ", currentData2: "18 Sep, 2021", currentName: "Fort Gibson, OK", currentName2: "Portlan, TX", trackingtTime: "",trackingImage2: UIImage()))
         
         currentproduct.append(Currentproduct(currentLocation: "Arrived to pick-up", currentImage: UIImage() , currentData: "13 Sep, 2021, 13:27 EST ", currentData2: "", currentName: "Fort Gibson, OK", currentName2: "", trackingtTime: "On time",trackingImage2: #imageLiteral(resourceName: "v1")))
         

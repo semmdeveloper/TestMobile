@@ -12,15 +12,15 @@ protocol TrackingProductCellDelegate {
 class TrackingproductCell : UITableViewCell {
     var delegate : TrackingProductCellDelegate?
     let minValue = 0
-    var Currentproduct : Currentproduct? {
+    var currentproduct : Currentproduct? {
         didSet {
    
-            currentData.text = Currentproduct?.currentData
-            currentIMage.image = Currentproduct?.currentImage
-            currentLocation.text = Currentproduct?.currentLocation
-            currentName.text = Currentproduct?.currentName
-            trackingTime.text = Currentproduct?.trackingtTime
-            trackingImage2.image = Currentproduct?.trackingImage2
+            currentData.text = currentproduct?.currentData
+            currentIMage.image = currentproduct?.currentImage
+            currentLocation.text = currentproduct?.currentLocation
+            currentName.text = currentproduct?.currentName
+            trackingTime.text = currentproduct?.trackingtTime
+            trackingImage2.image = currentproduct?.trackingImage2
             
             
   
@@ -37,22 +37,13 @@ class TrackingproductCell : UITableViewCell {
         
     }()
     private let View3 :UIView = {
-        let myView=UIView(frame: CGRect(x: 33, y: 23, width: 70, height: 70));
+        let myView=UIView(frame: CGRect(x: UIScreen.main.bounds.width*0, y: UIScreen.main.bounds.height*0, width: 0, height: 0));
         myView.backgroundColor = Utils.trackingColor
         myView.layer.cornerRadius=15
        return myView
         
     }()
     
-    private let View4 :UIView = {
-        let myView=UIView(frame: CGRect(x: 270, y: UIScreen.main.bounds.width*0.14, width: 8, height: 8));
-        myView.backgroundColor = UIColor.systemGreen
-        myView.layer.cornerRadius=4
-       return myView
-        
-    }()
-
-
     private let currentLocation: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
@@ -72,7 +63,6 @@ class TrackingproductCell : UITableViewCell {
     private let trackingImage2: UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "location")    )
         imgView.contentMode = .scaleAspectFit
-        imgView.frame = CGRect(x: 57, y: 47, width: 20, height: 20)
         imgView.clipsToBounds = true
         return imgView
     }()
@@ -116,29 +106,33 @@ class TrackingproductCell : UITableViewCell {
         
         self.backgroundColor=Utils.backGroundColor
         addSubview(View2)
-        addSubview(View3)
-        addSubview(View4)
-        addSubview(currentName)
-        addSubview(trackingTime)
-        addSubview(currentData)
-        addSubview(currentLocation)
-        addSubview(currentIMage)
-        addSubview(trackingImage2)
+        View2.addSubview(View3)
+        View2.addSubview(currentName)
+        View2.addSubview(trackingTime)
+        View2.addSubview(currentData)
+        View2.addSubview(currentLocation)
+        View2.addSubview(currentIMage)
+        View2.addSubview(trackingImage2)
 
 
-        currentLocation.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 120, paddingBottom: 60, paddingRight: 30, width: 30, height: 30, enableInsets: false)
+        currentLocation.anchor(top: View2.topAnchor, left: View3.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 10, paddingLeft: 100, paddingBottom: 60, paddingRight: 0, width: 30, height: 30, enableInsets: false)
         
-        currentName.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 120, paddingBottom: 10, paddingRight: 30, width: 30, height: 30, enableInsets: false)
+        currentName.anchor(top: View2.topAnchor, left: View3.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 10, paddingLeft: 100, paddingBottom: 10, paddingRight: 0, width: 30, height: 30, enableInsets: false)
         
-        trackingTime.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 290, paddingBottom: 14, paddingRight: 30, width: 30, height: 30, enableInsets: false)
+        trackingTime.anchor(top: View2.topAnchor, left: currentName.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 8, paddingLeft: 150, paddingBottom: 13, paddingRight: 15, width: 0, height: 0, enableInsets: false)
 
         
-        currentData.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 60, paddingLeft: 120, paddingBottom: 10, paddingRight: 30, width: 30, height: 30, enableInsets: false)
-        
+        currentData.anchor(top: View2.topAnchor, left: View3.leftAnchor, bottom: View2.bottomAnchor, right: View2.rightAnchor, paddingTop: 60, paddingLeft: 100, paddingBottom: 10, paddingRight: 30, width: 30, height: 30, enableInsets: false)
+
         
         View2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10, paddingLeft: 20, paddingBottom: 10, paddingRight: 20, width: 0, height: 10, enableInsets: false)
         
+        trackingImage2.anchor(top: View3.topAnchor, left: View3.leftAnchor, bottom: View3.bottomAnchor, right: View3.rightAnchor, paddingTop: 25, paddingLeft: 25, paddingBottom: 25, paddingRight: 25, width: 0, height: 0, enableInsets: false)
         
+        View3.anchor(top: View2.topAnchor, left: View2.leftAnchor, bottom: View2.bottomAnchor, right: currentName.rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: UIScreen.main.bounds.width*0.7, width: 0, height: 0, enableInsets: false)
+        
+     
+     
       
 
   
