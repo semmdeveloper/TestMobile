@@ -25,19 +25,16 @@ struct Messageproduct {
 }
 struct Upcomingproduct{
     var upcomingNumber : String
-    var upcomingNumber2 : String
+    var upcomingNumberTwoo : String
     var upcomingName : String
-    var upcomingName2 : String
-    var upcomingLine : UIImage
+    var upcomingNametwoo : String
     var upcomingImage : UIImage
-    var upcomingImage2 : UIImage
-    var upcomingImage3 : UIImage
+    var upcomingImageTwoo : UIImage
+    var upcomingImageThree : UIImage
     var upcomingData : String
-    var upcomingData2 : String
-    var upcomingPoint : UIImage
-    var upcomingPoint2 : UIImage
+    var upcomingDataTwoo : String
     var upcomingLocation : String
-    var upcomingLocation2 : String
+    var upcomingLocationTwoo : String
     
 
 

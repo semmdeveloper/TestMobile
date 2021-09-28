@@ -13,157 +13,247 @@ class UpcomingproductCell : UITableViewCell {
     let minValue = 0
     var Upcomingproduct : Upcomingproduct? {
         didSet {
-            upcomingImage3.image = Upcomingproduct?.upcomingImage3
-            upcomingImage2.image = Upcomingproduct?.upcomingImage2
+            upcomingImageThree.image = Upcomingproduct?.upcomingImageThree
+            upcomingImageTwoo.image = Upcomingproduct?.upcomingImageTwoo
             upcomingImage.image = Upcomingproduct?.upcomingImage
-            upcomingLine.image = Upcomingproduct?.upcomingLine
-            upcomingData2.text = Upcomingproduct?.upcomingData2
+             upcomingDataTwoo.text = Upcomingproduct?.upcomingDataTwoo
             upcomingData.text = Upcomingproduct?.upcomingData
             upcomingName.text = Upcomingproduct?.upcomingName
-            upcomingName2.text = Upcomingproduct?.upcomingName2
+            upcomingNameTwoo.text = Upcomingproduct?.upcomingNametwoo
             upcomingNumber.text = Upcomingproduct?.upcomingNumber
-            upcomingNumber2.text = Upcomingproduct?.upcomingNumber2
-            upcomingPoint.image = Upcomingproduct?.upcomingPoint
-            upcomingPoint2.image = Upcomingproduct?.upcomingPoint2
+            upcomingNumberTwoo.text = Upcomingproduct?.upcomingNumberTwoo
             upcomingLocation.text = Upcomingproduct?.upcomingLocation
-            upcomingLocation2.text = Upcomingproduct?.upcomingLocation
+            upcomingLocationTwoo.text = Upcomingproduct?.upcomingLocationTwoo
 
  }
 }
     private var label : UILabel {
         let label=UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 122, y: 70)
+        label.center = CGPoint(x: 122, y: 65)
         label.text = "Monday, September 27"
         return label
     }
     
     
-    private let View :UIView = {
-        let myView=UIView(frame: CGRect(x: 15 , y: 100, width: 343, height: UIScreen.main.bounds.height*0.18));
+    private let upcomingView :UIView = {
+        let myView=UIView();
         myView.backgroundColor = UIColor.white
         myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
        return myView
 
     }()
-    private let View2 :UIView = {
-        let myView=UIView(frame: CGRect(x: 40 , y: 130, width: 25, height: 25));
-        myView.backgroundColor = Utils.numberColor
-        myView.layer.cornerRadius=13
-       return myView
-
-    }()
-    private let View3 :UIView = {
-        let myView=UIView(frame: CGRect(x: 40 , y: 190, width: 25, height: 25));
-        myView.backgroundColor = Utils.numberColor
-        myView.layer.cornerRadius=13
-       return myView
-
-    }()
-    private let View4 :UIView = {
-        let myView=UIView(frame: CGRect(x: 300 , y: 155, width: 40, height: 40));
+    private let numberView :UIView = {
+        let myView=UIView();
         myView.backgroundColor = UIColor.white
-        myView.layer.cornerRadius=20
+        myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    private let pointOneView :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = Utils.numberColor
+        myView.layer.cornerRadius=9
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    private let pointTwooView:UIView = {
+        let myView=UIView();
+        myView.backgroundColor = Utils.numberColor
+        myView.layer.cornerRadius=9
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    private let lineView :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = Utils.numberColor
+        myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    
+    private let locationView :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    
+    private let dataView :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    
+    private let dataViewTwoo :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    
+    
+    
+    private let locationViewTwoo :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    
+    private let OtherView :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = UIColor.white
+        myView.layer.cornerRadius=10
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    
+    private let pointThreeView :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = UIColor.black
+        myView.layer.cornerRadius=4
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+
+    }()
+    
+    private let pointFourView :UIView = {
+        let myView=UIView();
+        myView.backgroundColor = UIColor.black
+        myView.layer.cornerRadius=4
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
        return myView
 
     }()
     private let upcomingNumber: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .white
-        lbl.font = UIFont.boldSystemFont(ofSize: 12)
-        lbl.textAlignment = .left
-        lbl.numberOfLines = 0
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.textAlignment = .center
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
-    private let upcomingNumber2: UILabel = {
+    private let upcomingNumberTwoo: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .white
-        lbl.font = UIFont.boldSystemFont(ofSize: 12)
-        lbl.textAlignment = .left
-        lbl.numberOfLines = 0
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
+        lbl.textAlignment = .center
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
         private let upcomingName: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 12)
+        lbl.font = UIFont.boldSystemFont(ofSize: 15)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+            lbl.translatesAutoresizingMaskIntoConstraints = false
+            lbl.contentMode = .scaleAspectFit
         return lbl
     }()
-    private let upcomingName2: UILabel = {
+    private let upcomingNameTwoo: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 12)
+        lbl.font = UIFont.boldSystemFont(ofSize: 15)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
     private let upcomingData: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .systemGray
-        lbl.font = UIFont.boldSystemFont(ofSize: 8)
+        lbl.font = UIFont.boldSystemFont(ofSize: 9)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
-    private let upcomingData2: UILabel = {
+    private let upcomingDataTwoo: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .systemGray
-        lbl.font = UIFont.boldSystemFont(ofSize: 8)
+        lbl.font = UIFont.boldSystemFont(ofSize: 9)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
-    private let upcomingPoint: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "location"))
-        imgView.contentMode = .scaleAspectFit
-        imgView.clipsToBounds = true
-        return imgView
-    }()
-    private let upcomingPoint2: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "location"))
-        imgView.contentMode = .scaleAspectFit
-        imgView.clipsToBounds = true
-        return imgView
-    }()
+
     private let upcomingLocation: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .systemGray
-        lbl.font = UIFont.boldSystemFont(ofSize: 12)
+        lbl.font = UIFont.boldSystemFont(ofSize: 14)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
-    private let upcomingLocation2: UILabel = {
+    private let upcomingLocationTwoo: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .systemGray
-        lbl.font = UIFont.boldSystemFont(ofSize: 12)
+        lbl.font = UIFont.boldSystemFont(ofSize: 14)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.contentMode = .scaleAspectFit
         return lbl
     }()
-    private let upcomingLine: UIImageView = {
-        let imgView = UIImageView(image: #imageLiteral(resourceName: "location"))
-        imgView.contentMode = .scaleAspectFit
-        imgView.clipsToBounds = true
-        return imgView
-    }()
+
     private let upcomingImage: UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "location"))
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleAspectFit
         return imgView
     }()
-    private let upcomingImage2: UIImageView = {
+    private let upcomingImageTwoo: UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "location"))
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleAspectFit
         return imgView
     }()
-    private let upcomingImage3: UIImageView = {
+    private let upcomingImageThree: UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "location"))
         imgView.contentMode = .scaleAspectFit
         imgView.clipsToBounds = true
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleAspectFit
         return imgView
     }()
     
@@ -176,55 +266,148 @@ class UpcomingproductCell : UITableViewCell {
          super.init(style: style, reuseIdentifier: reuseIdentifier)
          backgroundColor = Utils.dashboardcolor
            addSubview(label)
-           addSubview(View)
-         addSubview(View2)
-         addSubview(View3)
-         addSubview(View4)
-         addSubview(upcomingData)
-         addSubview(upcomingData2)
-         addSubview(upcomingLocation)
-         addSubview(upcomingLocation2)
-         addSubview(upcomingPoint)
-         addSubview(upcomingPoint2)
-         addSubview(upcomingNumber)
-         addSubview(upcomingNumber2)
-         addSubview(upcomingName)
-         addSubview(upcomingName2)
-         addSubview(upcomingLine)
-         addSubview(upcomingImage)
-         addSubview(upcomingImage2)
-         addSubview(upcomingImage3)
+           addSubview(upcomingView)
+         upcomingView.addSubview(numberView)
+         numberView.addSubview(pointOneView)
+         numberView.addSubview(pointTwooView)
+         numberView.addSubview(lineView)
+         upcomingView.addSubview(locationView)
+         locationView.addSubview(pointThreeView)
+         pointOneView.addSubview(upcomingNumber)
+         pointTwooView.addSubview(upcomingNumberTwoo)
+         locationView.addSubview(upcomingName)
+         locationView.addSubview(upcomingLocation)
+         upcomingView.addSubview(locationViewTwoo)
+         locationViewTwoo.addSubview(upcomingNameTwoo)
+         locationViewTwoo.addSubview(pointFourView)
+         locationViewTwoo.addSubview(upcomingLocationTwoo)
+         upcomingView.addSubview(dataView)
+         upcomingView.addSubview(dataViewTwoo)
+         dataView.addSubview(upcomingImageTwoo)
+         dataViewTwoo.addSubview(upcomingImageThree)
+         dataView.addSubview(upcomingData)
+         dataViewTwoo.addSubview(upcomingDataTwoo)
+         upcomingView.addSubview(OtherView)
+         OtherView.addSubview(upcomingImage)
+
+         
+//         MARK:  - upcomingViews
+         upcomingView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
+         upcomingView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
+         upcomingView.widthAnchor.constraint(equalToConstant: bounds.width*2).isActive = true
+         upcomingView.topAnchor.constraint(equalTo: topAnchor, constant: 80).isActive = true
+         upcomingView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+         
+         numberView.leftAnchor.constraint(equalTo: upcomingView.leftAnchor, constant: 15).isActive = true
+         numberView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+         numberView.bottomAnchor.constraint(equalTo: upcomingView.bottomAnchor,constant: -20).isActive = true
+         numberView.topAnchor.constraint(equalTo: upcomingView.topAnchor, constant: 20).isActive = true
+         numberView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+         
+         pointOneView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+         pointOneView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+         pointOneView.centerXAnchor.constraint(equalTo: numberView.centerXAnchor).isActive = true
+         pointOneView.topAnchor.constraint(equalTo: numberView.topAnchor, constant: 10).isActive = true
+         
+         pointTwooView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+         pointTwooView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+         pointTwooView.centerXAnchor.constraint(equalTo: numberView.centerXAnchor).isActive = true
+         pointTwooView.bottomAnchor.constraint(equalTo: numberView.bottomAnchor, constant: -15).isActive = true
+         
+         lineView.widthAnchor.constraint(equalToConstant: 2).isActive = true
+         lineView.heightAnchor.constraint(equalToConstant: 64).isActive = true
+         lineView.topAnchor.constraint(equalTo: pointOneView.topAnchor, constant: 10).isActive = true
+         lineView.centerXAnchor.constraint(equalTo: numberView.centerXAnchor).isActive = true
+         
+         locationView.widthAnchor.constraint(equalToConstant: bounds.width*0.7).isActive = true
+         locationView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+         locationView.leftAnchor.constraint(equalTo: numberView.rightAnchor, constant: 20).isActive = true
+         locationView.topAnchor.constraint(equalTo: upcomingView.topAnchor, constant: 20).isActive = true
+         
+         locationViewTwoo.widthAnchor.constraint(equalToConstant: bounds.width*0.7).isActive = true
+         locationViewTwoo.heightAnchor.constraint(equalToConstant: 40).isActive = true
+         locationViewTwoo.leftAnchor.constraint(equalTo: numberView.rightAnchor, constant: 20).isActive = true
+         locationViewTwoo.bottomAnchor.constraint(equalTo: upcomingView.bottomAnchor, constant: -20).isActive = true
+         
+         dataView.widthAnchor.constraint(equalToConstant: bounds.width*0.4).isActive = true
+         dataView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+         dataView.topAnchor.constraint(equalTo: locationView.bottomAnchor).isActive = true
+         dataView.leftAnchor.constraint(equalTo: numberView.rightAnchor,constant: 20).isActive = true
+         
+         dataViewTwoo.widthAnchor.constraint(equalToConstant: bounds.width*0.4).isActive = true
+         dataViewTwoo.heightAnchor.constraint(equalToConstant: 20).isActive = true
+         dataViewTwoo.topAnchor.constraint(equalTo: locationViewTwoo.bottomAnchor).isActive = true
+         dataViewTwoo.leftAnchor.constraint(equalTo: numberView.rightAnchor,constant: 20).isActive = true
+         
+         pointThreeView.leftAnchor.constraint(equalTo: upcomingName.rightAnchor, constant: 15).isActive = true
+         pointThreeView.widthAnchor.constraint(equalToConstant: 8).isActive = true
+         pointThreeView.heightAnchor.constraint(equalToConstant: 8).isActive = true
+         pointThreeView.centerYAnchor.constraint(equalTo: locationView.centerYAnchor).isActive = true
+         
+         pointFourView.leftAnchor.constraint(equalTo: upcomingNameTwoo.rightAnchor, constant: 15).isActive = true
+         pointFourView.widthAnchor.constraint(equalToConstant: 8).isActive = true
+         pointFourView.heightAnchor.constraint(equalToConstant: 8).isActive = true
+         pointFourView.centerYAnchor.constraint(equalTo: locationViewTwoo.centerYAnchor).isActive = true
+         
+         OtherView.widthAnchor.constraint(equalToConstant: bounds.width*0.1).isActive = true
+         OtherView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+         OtherView.rightAnchor.constraint(equalTo: upcomingView.rightAnchor, constant: -15).isActive = true
+         OtherView.centerYAnchor.constraint(equalTo: upcomingView.centerYAnchor).isActive = true
+         
+//         MARK: - Numbers
+         
+         upcomingNumber.centerXAnchor.constraint(equalTo: pointOneView.centerXAnchor).isActive = true
+         upcomingNumber.centerYAnchor.constraint(equalTo: pointOneView.centerYAnchor).isActive = true
+         
+         upcomingNumberTwoo.centerXAnchor.constraint(equalTo: pointTwooView.centerXAnchor).isActive = true
+         upcomingNumberTwoo.centerYAnchor.constraint(equalTo: pointTwooView.centerYAnchor).isActive = true
+         
+//         MARK: - Name
+         
+         upcomingName.centerYAnchor.constraint(equalTo: locationView.centerYAnchor).isActive = true
+         upcomingNameTwoo.centerYAnchor.constraint(equalTo: locationViewTwoo.centerYAnchor).isActive = true
+        
+         
+//         MARK: - LocationLabel
+         
+         upcomingLocation.centerYAnchor.constraint(equalTo: locationView.centerYAnchor).isActive = true
+         upcomingLocation.leftAnchor.constraint(equalTo: pointThreeView.rightAnchor, constant: 15).isActive = true
+         
+         upcomingLocationTwoo.centerYAnchor.constraint(equalTo: locationViewTwoo.centerYAnchor).isActive = true
+         upcomingLocationTwoo.leftAnchor.constraint(equalTo: pointFourView.rightAnchor, constant: 15).isActive = true
+         
+//         MARK: - ImageView
+         
+         upcomingImageTwoo.centerYAnchor.constraint(equalTo: dataView.centerYAnchor).isActive = true
+         upcomingImageThree.centerYAnchor.constraint(equalTo: dataViewTwoo.centerYAnchor).isActive = true
+         
+         upcomingImage.centerYAnchor.constraint(equalTo: OtherView.centerYAnchor).isActive = true
+         upcomingImage.centerXAnchor.constraint(equalTo: OtherView.centerXAnchor).isActive = true
          
          
-         upcomingNumber.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 50, paddingBottom: 0, paddingRight: 0, width: 0, height: 10, enableInsets: false)
          
-         upcomingNumber2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 143, paddingLeft: 48, paddingBottom: 0, paddingRight: 0, width: 0, height: 10, enableInsets: false)
+//         MARK: - Data
          
-         upcomingLine.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 86, paddingLeft: 51, paddingBottom: 0, paddingRight: 0, width: 0, height: 20, enableInsets: false)
+         upcomingData.centerYAnchor.constraint(equalTo: dataView.centerYAnchor).isActive = true
+         upcomingData.leftAnchor.constraint(equalTo: upcomingImageTwoo.rightAnchor,constant: 15).isActive = true
+         upcomingDataTwoo.centerYAnchor.constraint(equalTo: dataViewTwoo.centerYAnchor).isActive = true
+         upcomingDataTwoo.leftAnchor.constraint(equalTo: upcomingImageThree.rightAnchor,constant: 15).isActive = true
+
+
          
-         upcomingName.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+
+
          
-         upcomingName2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 143, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingData.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 55, paddingLeft: 100, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingData2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 175, paddingLeft: 100, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingImage3.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 55, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingImage2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 175, paddingLeft: 85, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingPoint.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 130, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingPoint2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 143, paddingLeft: 130, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingLocation.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 25, paddingLeft: 150, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
          
-         upcomingLocation2.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil,paddingTop: 143, paddingLeft: 150, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
-         
-         upcomingImage.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 102, paddingLeft: 313, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
-         
-//         
+
+    
      }
     
     required init?(coder: NSCoder) {
