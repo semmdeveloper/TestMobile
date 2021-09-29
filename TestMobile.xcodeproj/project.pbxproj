@@ -28,6 +28,7 @@
 		FAC03DA82700FBC20075C1CB /* Trackingproducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DA72700FBC20075C1CB /* Trackingproducts.swift */; };
 		FAC03DAA27011C6D0075C1CB /* MessageLIveChatProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DA927011C6D0075C1CB /* MessageLIveChatProducts.swift */; };
 		FAC03DAC270199920075C1CB /* UpcomingLocationProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DAB270199920075C1CB /* UpcomingLocationProducts.swift */; };
+		FAC03DB0270454B30075C1CB /* DetailesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC03DAF270454B30075C1CB /* DetailesViewController.swift */; };
 		FAF5305226F8A6C1009C8E44 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */; };
 		FAF5305426F8A6DF009C8E44 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */; };
 		FAF5305626F8A6F9009C8E44 /* TrustViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */; };
@@ -82,6 +83,7 @@
 		FAC03DA72700FBC20075C1CB /* Trackingproducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trackingproducts.swift; sourceTree = "<group>"; };
 		FAC03DA927011C6D0075C1CB /* MessageLIveChatProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLIveChatProducts.swift; sourceTree = "<group>"; };
 		FAC03DAB270199920075C1CB /* UpcomingLocationProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingLocationProducts.swift; sourceTree = "<group>"; };
+		FAC03DAF270454B30075C1CB /* DetailesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailesViewController.swift; sourceTree = "<group>"; };
 		FAF5305126F8A6C1009C8E44 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrustViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				FAF5305326F8A6DF009C8E44 /* MessageViewController.swift */,
 				FAF5305526F8A6F9009C8E44 /* TrustViewController.swift */,
 				FAF5305726F8A709009C8E44 /* ProfileViewController.swift */,
+				FAC03DAF270454B30075C1CB /* DetailesViewController.swift */,
 			);
 			path = Dashboards;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				FA12795026F330C100751746 /* SceneDelegate.swift in Sources */,
 				FA9B462826FB349100571F74 /* MessageProducts.swift in Sources */,
 				FAC03DAA27011C6D0075C1CB /* MessageLIveChatProducts.swift in Sources */,
+				FAC03DB0270454B30075C1CB /* DetailesViewController.swift in Sources */,
 				FAF5305426F8A6DF009C8E44 /* MessageViewController.swift in Sources */,
 				FA12798226F3355700751746 /* Profile.swift in Sources */,
 				FAF5305826F8A709009C8E44 /* ProfileViewController.swift in Sources */,

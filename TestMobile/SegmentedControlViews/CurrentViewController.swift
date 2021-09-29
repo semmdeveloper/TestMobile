@@ -28,31 +28,36 @@ class CurrentViewController: UITableViewController{
             let currentLastItem = currentproduct[indexPath.row]
             cell.isUserInteractionEnabled = true
             cell.currentproduct = currentLastItem
+          
             return cell
+            
         }else{
             
             tableView.register(TrackingproductCell.self, forCellReuseIdentifier: cellId)
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TrackingproductCell
-            
             let currentLastItem = currentproduct[indexPath.row]
-           
             cell.currentproduct = currentLastItem
             return cell
         }
     }
-    
+  
     
    
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        if(indexPath.row==0){
+            let destination = DetailesViewController()
+                navigationController?.pushViewController(destination, animated: true)
+        }
+   
+
+        
+
+
         
     }
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return currentproduct.count
         

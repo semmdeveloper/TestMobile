@@ -285,7 +285,7 @@ class UpcominglocationproductCell : UITableViewCell {
          OtherView.addSubview(upcomingImage)
 
          
-//         MARK:  - upcomingViews
+//         MARK:  - UpcomingViews
          upcomingView.leftAnchor.constraint(equalTo: leftAnchor, constant: 15).isActive = true
          upcomingView.rightAnchor.constraint(equalTo: rightAnchor, constant: -15).isActive = true
          upcomingView.widthAnchor.constraint(equalToConstant: bounds.width*2).isActive = true

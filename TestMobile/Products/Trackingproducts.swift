@@ -154,17 +154,29 @@ class TrackingproductCell : UITableViewCell {
         View3.bottomAnchor.constraint(equalTo: View2.bottomAnchor, constant: -6).isActive = true
         View3.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-//        MARK: - UIImage
-        trackingImage2.centerXAnchor.constraint(equalTo: View3.centerXAnchor).isActive = true
-        trackingImage2.centerYAnchor.constraint(equalTo: View3.centerYAnchor).isActive = true
         
-//        MARK: - UIVIEW
         View4.leftAnchor.constraint(equalTo: View3.rightAnchor, constant: 15).isActive = true
         View4.widthAnchor.constraint(equalToConstant: View2.bounds.width*0.4500).isActive = true
         View4.topAnchor.constraint(equalTo: View2.topAnchor, constant: 6).isActive = true
         View4.bottomAnchor.constraint(equalTo: View2.bottomAnchor, constant: -6).isActive = true
         View4.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        View5.leftAnchor.constraint(equalTo: View4.rightAnchor, constant: 10).isActive = true
+        View5.rightAnchor.constraint(equalTo: View2.rightAnchor, constant: -6).isActive = true
+        View5.widthAnchor.constraint(equalToConstant: View2.bounds.width*0.2500).isActive = true
+        View5.topAnchor.constraint(equalTo: View2.topAnchor, constant: 6).isActive = true
+        View5.bottomAnchor.constraint(equalTo: View2.bottomAnchor, constant: -6).isActive = true
+        View5.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        View6.widthAnchor.constraint(equalToConstant: 8).isActive = true
+        View6.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        View6.leftAnchor.constraint(equalTo: View5.leftAnchor, constant: 5).isActive = true
+        View6.centerYAnchor.constraint(equalTo: View5.centerYAnchor).isActive = true
+        
+//        MARK: - UIImage
+        trackingImage2.centerXAnchor.constraint(equalTo: View3.centerXAnchor).isActive = true
+        trackingImage2.centerYAnchor.constraint(equalTo: View3.centerYAnchor).isActive = true
+                
 //        MARK: - UILabelLocation
         
         currentLocation.topAnchor.constraint(equalTo: View4.topAnchor, constant: 5).isActive = true
@@ -180,42 +192,14 @@ class TrackingproductCell : UITableViewCell {
         currentData.bottomAnchor.constraint(equalTo: View4.bottomAnchor, constant: -5).isActive = true
         currentData.leftAnchor.constraint(equalTo: View4.leftAnchor, constant: 5).isActive = true
         
-//        MARK: - UIView
-        
-        View5.leftAnchor.constraint(equalTo: View4.rightAnchor, constant: 10).isActive = true
-        View5.rightAnchor.constraint(equalTo: View2.rightAnchor, constant: -6).isActive = true
-        View5.widthAnchor.constraint(equalToConstant: View2.bounds.width*0.2500).isActive = true
-        View5.topAnchor.constraint(equalTo: View2.topAnchor, constant: 6).isActive = true
-        View5.bottomAnchor.constraint(equalTo: View2.bottomAnchor, constant: -6).isActive = true
-        View5.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
 //       MARK: - UILabel
         trackingTime.rightAnchor.constraint(equalTo: View5.rightAnchor,constant: -5).isActive = true
         trackingTime.centerYAnchor.constraint(equalTo: View5.centerYAnchor).isActive = true
-        
-//        MARK: UIViewPoint
-        View6.widthAnchor.constraint(equalToConstant: 8).isActive = true
-        View6.heightAnchor.constraint(equalToConstant: 8).isActive = true
-        View6.leftAnchor.constraint(equalTo: View5.leftAnchor, constant: 5).isActive = true
-        View6.centerYAnchor.constraint(equalTo: View5.centerYAnchor).isActive = true
-
-        
-
-
- 
      
-      
-
-  
-
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
-    
-    
-
+  
 }

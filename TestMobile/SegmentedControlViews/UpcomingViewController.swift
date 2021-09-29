@@ -29,7 +29,6 @@ class UpcomingViewController: UITableViewController {
             
             tableView.register(UpcominglocationproductCell.self, forCellReuseIdentifier: cellId)
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UpcominglocationproductCell
-            
             let currentLastItem = upcomingproduct[indexPath.row]
             cell.isUserInteractionEnabled = true
             cell.Upcomingproduct = currentLastItem
@@ -52,6 +51,10 @@ class UpcomingViewController: UITableViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return UIScreen.main.bounds.height*0.3650
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(indexPath.row==0){
             return UIScreen.main.bounds.height*0.3650
@@ -66,33 +69,7 @@ class UpcomingViewController: UITableViewController {
     
     func createProductArray() {
         upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-
-        
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-
-        
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-
-        upcomingproduct.append(Upcomingproduct(upcomingNumber: "1", upcomingNumberTwoo: "2", upcomingName: "FTW2", upcomingNametwoo: "HDE2", upcomingImage: #imageLiteral(resourceName: "bottom")   , upcomingImageTwoo: #imageLiteral(resourceName: "time"), upcomingImageThree: #imageLiteral(resourceName: "time2"), upcomingData: "09/22 11:40 PDT", upcomingDataTwoo: "09/22 11:40 PDT", upcomingLocation: "Cranbury, New Jersey", upcomingLocationTwoo: "Hagerstown, MD"))
-        
-
-        
+  
         
 
         

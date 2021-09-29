@@ -5,7 +5,7 @@ protocol CurrentProductCelldelegate {
     func decreaseNumber(cell: CurrentProductCelldelegate,number : Int)
 }
 
-class CurrentproductCell : UITableViewCell {
+class CurrentproductCell : UITableViewCell, UIViewControllerTransitioningDelegate {
     var delegate : CurrentProductCelldelegate?
     let minValue = 0
     var currentproduct : Currentproduct? {
@@ -35,9 +35,11 @@ class CurrentproductCell : UITableViewCell {
         let myView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.05 , y: 60, width: UIScreen.main.bounds.width*0.90, height: UIScreen.main.bounds.height*0.3300));
         myView.backgroundColor = UIColor.white
         myView.layer.cornerRadius=25
-       return myView
-        
+        return myView
     }()
+    
+
+    
     
     private let customView2 :UIView = {
         let myView = UIView();
@@ -59,18 +61,19 @@ class CurrentproductCell : UITableViewCell {
         
     }()
 
-    let btn:UIButton={
+   private let btn : UIButton={
         let btn = UIButton()
         btn.frame = CGRect(x: UIScreen.main.bounds.width*0.11, y: UIScreen.main.bounds.height*0.23, width: UIScreen.main.bounds.width*0.70, height: 48)
         btn.backgroundColor = Utils.buttonColor
         btn.layer.cornerRadius = 15
         btn.setTitle("Arrived", for: .normal)
         btn.title(for: .normal)
-        btn.addTarget(self, action: #selector(buttonClicked), for: .allTouchEvents)
+        btn.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         return btn
     }()
     @objc func buttonClicked() {
           print("Button Clicked")
+  
         
          
          
@@ -144,6 +147,7 @@ class CurrentproductCell : UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor=Utils.backGroundColor
+
         addSubview(customView)
         addSubview(label)
         customView.addSubview(customView2)
@@ -155,7 +159,7 @@ class CurrentproductCell : UITableViewCell {
         customView3.addSubview(currentName)
         customView3.addSubview(currentName2)
         customView.addSubview(btn)
-        
+    
 //        MARK: - CustomView2
         
         customView2.centerXAnchor.constraint(equalTo: customView.centerXAnchor).isActive = true
@@ -197,18 +201,14 @@ class CurrentproductCell : UITableViewCell {
 //        MARK: - CurrentName2
         currentName2.topAnchor.constraint(equalTo: customView3.topAnchor, constant: 25).isActive = true
         currentName2.rightAnchor.constraint(equalTo: customView3.rightAnchor, constant: -10).isActive = true
-        
-        
-        
-        
-        
-        
-
-        
-        
-    
+     
    
     }
+    @objc func detailView() {
+          print("Button Clicked")
+         
+         
+     }
     
   
        
