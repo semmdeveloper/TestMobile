@@ -48,7 +48,7 @@ class CurrentViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         if(indexPath.row==0){
-            let destination = DetailesViewController()
+            let destination = DetailisViewController()
                 navigationController?.pushViewController(destination, animated: true)
         }
    

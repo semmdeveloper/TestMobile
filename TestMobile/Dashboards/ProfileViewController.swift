@@ -14,22 +14,20 @@ class ProfileViewController: UIViewController {
         configureNavigationBar()
         view.backgroundColor=Utils.dashboardcolor
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        view.addSubview(textLabel)
+        textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
-        let height = UIScreen.main.bounds.height
-        
-        if height > 800.0
-        {
-            print("large screen")
-        }
-        else if height > 700.0
-        {
-            print("medium screen")
-        }
-        else
-        {
-            print("small screen")
-        }
     }
+    
+    
+    private let textLabel : UILabel = {
+        let textLabel = UILabel()
+        textLabel.text = "Profile loading..."
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        return textLabel
+    }()
+    
     func configureNavigationBar(){
         navigationController?.navigationBar.barTintColor = Utils.backGroundColor
 

@@ -50,7 +50,6 @@ class MessageViewController: UITableViewController {
             
             tableView.register(MessagechatproductCell.self, forCellReuseIdentifier: cellId)
             let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MessagechatproductCell
-            
             let currentLastItem = messageproduct[indexPath.row]
             cell.isUserInteractionEnabled = true
             cell.Messageproduct = currentLastItem
