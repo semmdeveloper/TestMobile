@@ -28,6 +28,8 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
             homeView.addSubview(arrivedView)
             homeView.addSubview(detailView)
             homeView.addSubview(pdfView)
+            homeView.addSubview(labelView)
+            homeView.addSubview(labelViewTwoo)
         }
     
 //    MARK: - ScrollView
@@ -41,15 +43,7 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         scrollView.contentSize = CGSize(width: 0, height: 2000)
         return scrollView
         }()
-    
-    let homeDetailLabelText : UILabel = {
-        let locationlabelText = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
-        locationlabelText.textColor = UIColor.black
-        locationlabelText.text = "Detailes"
-        locationlabelText.translatesAutoresizingMaskIntoConstraints = false
-        locationlabelText.font = UIFont.boldSystemFont(ofSize: 14)
-        return locationlabelText
-    }()
+
     
     
 //    MARK: - labelTexts
@@ -588,21 +582,21 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
     }()
     
     private let pdfViewOne: UIView = {
-        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.0400, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0800));
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.0400, width: UIScreen.main.bounds.width*0.1600, height: UIScreen.main.bounds.height*0.0900));
         arrivedView.layer.cornerRadius = 10
         arrivedView.backgroundColor = Utils.chatColor2
         return arrivedView
     }()
     
     private let pdfViewTwoo: UIView = {
-        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.1800, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0800));
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.1800, width: UIScreen.main.bounds.width*0.1600, height: UIScreen.main.bounds.height*0.0900));
         arrivedView.layer.cornerRadius = 10
         arrivedView.backgroundColor = Utils.chatColor2
         return arrivedView
     }()
     
     private let pdfViewThree: UIView = {
-        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.3200, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0800));
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.3200, width: UIScreen.main.bounds.width*0.1600, height: UIScreen.main.bounds.height*0.0900));
         arrivedView.layer.cornerRadius = 10
         arrivedView.backgroundColor = Utils.chatColor2
         return arrivedView
@@ -709,6 +703,38 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         
     }()
     
+//    MARK: -UILabel Text
+    private let labelView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*0.8750, width: UIScreen.main.bounds.width*0.3000, height: UIScreen.main.bounds.height*0.0600));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.dashboardcolor
+        return arrivedView
+    }()
+    
+    private let labelViewTwoo: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*1.495, width: UIScreen.main.bounds.width*0.3000, height: UIScreen.main.bounds.height*0.0600));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.dashboardcolor
+        return arrivedView
+    }()
+    
+    let homeDetailLabelText : UILabel = {
+        let locationlabelText = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        locationlabelText.textColor = UIColor.black
+        locationlabelText.text = "Detailes"
+        locationlabelText.translatesAutoresizingMaskIntoConstraints = false
+        locationlabelText.font = UIFont.boldSystemFont(ofSize: 14)
+        return locationlabelText
+    }()
+    
+    let homeDetailLabelTextTwoo : UILabel = {
+        let locationlabelText = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        locationlabelText.textColor = UIColor.black
+        locationlabelText.text = "Documents"
+        locationlabelText.translatesAutoresizingMaskIntoConstraints = false
+        locationlabelText.font = UIFont.boldSystemFont(ofSize: 14)
+        return locationlabelText
+    }()
     
     
     
@@ -722,17 +748,17 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         
         setupPdf()
         
-//        setupHomeLabeltext()
+        setupHomeLabeltext()
        
   
 
     }
     
     func  setupHomeLabeltext(){
-        homeView.addSubview(homeDetailLabelText)
-
-        homeDetailLabelText.topAnchor.constraint(equalTo: homeView.topAnchor,constant: 830).isActive = true
-        homeDetailLabelText.leftAnchor.constraint(equalTo: homeView.leftAnchor,constant: 30).isActive = true
+        labelView.addSubview(homeDetailLabelText)
+        labelViewTwoo.addSubview(homeDetailLabelTextTwoo)
+        homeDetailLabelText.centerYAnchor.constraint(equalTo: labelView.centerYAnchor).isActive = true
+        homeDetailLabelTextTwoo.centerYAnchor.constraint(equalTo: labelViewTwoo.centerYAnchor).isActive = true
         
     }
     
@@ -925,18 +951,12 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         pdfViewOne.addSubview(pdfImages)
         pdfViewTwoo.addSubview(pdfImagestwoo)
         pdfViewThree.addSubview(pdfImagesThree)
-        pdfImages.topAnchor.constraint(equalTo: pdfViewOne.topAnchor,constant: 5).isActive = true
-        pdfImages.bottomAnchor.constraint(equalTo: pdfViewOne.bottomAnchor,constant: -20).isActive = true
-        pdfImages.leftAnchor.constraint(equalTo: pdfViewOne.leftAnchor,constant: 15).isActive = true
-        pdfImages.rightAnchor.constraint(equalTo: pdfViewOne.rightAnchor,constant: -15).isActive = true
-        pdfImagestwoo.topAnchor.constraint(equalTo: pdfViewTwoo.topAnchor,constant: 7).isActive = true
-        pdfImagestwoo.leftAnchor.constraint(equalTo: pdfViewTwoo.leftAnchor,constant: 15).isActive = true
-        pdfImagestwoo.rightAnchor.constraint(equalTo: pdfViewTwoo.rightAnchor,constant: -15).isActive = true
-        pdfImagestwoo.bottomAnchor.constraint(equalTo: pdfViewTwoo.bottomAnchor,constant: -20).isActive = true
-        pdfImagesThree.topAnchor.constraint(equalTo: pdfViewThree.topAnchor,constant: 7).isActive = true
-        pdfImagesThree.leftAnchor.constraint(equalTo: pdfViewThree.leftAnchor,constant: 15).isActive = true
-        pdfImagesThree.rightAnchor.constraint(equalTo: pdfViewThree.rightAnchor,constant: -15).isActive = true
-        pdfImagesThree.bottomAnchor.constraint(equalTo: pdfViewThree.bottomAnchor,constant: -20).isActive = true
+        pdfImages.centerXAnchor.constraint(equalTo: pdfViewOne.centerXAnchor).isActive = true
+        pdfImages.centerYAnchor.constraint(equalTo: pdfViewOne.centerYAnchor).isActive = true
+        pdfImagestwoo.centerXAnchor.constraint(equalTo: pdfViewTwoo.centerXAnchor).isActive = true
+        pdfImagestwoo.centerYAnchor.constraint(equalTo: pdfViewTwoo.centerYAnchor).isActive = true
+        pdfImagesThree.centerXAnchor.constraint(equalTo: pdfViewThree.centerXAnchor).isActive = true
+        pdfImagesThree.centerYAnchor.constraint(equalTo: pdfViewThree.centerYAnchor).isActive = true
         
         pdfViewOne.addSubview(pdfLabelText)
         pdfViewTwoo.addSubview(pdfLabelTextTwoo)
