@@ -160,6 +160,18 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         timeLabelTextTwoo.font = UIFont.boldSystemFont(ofSize: 20)
         return timeLabelTextTwoo
     }()
+    
+    let helloLabel : UILabel = {
+        let helloLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        helloLabel.textColor = UIColor.green
+        helloLabel.text = "-4h : 30m"
+        helloLabel.translatesAutoresizingMaskIntoConstraints = false
+        helloLabel.contentMode = .scaleAspectFill
+        helloLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        return helloLabel
+    }()
+    
+    
 // MARK: -  UIImages
     
     let locationImage : UIImageView = {
@@ -207,6 +219,7 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         return lineViewTwoo
     }()
     
+
 //    MARK: - UIButtons
     
    private let arrivedButton:UIButton={
@@ -274,7 +287,7 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
     }()
     
     private let detailPhoneView: UIView = {
-        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.4800, y: UIScreen.main.bounds.height*0.2500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0700));
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.4800, y: UIScreen.main.bounds.height*0.2500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0600));
         arrivedView.layer.cornerRadius = 8
         arrivedView.backgroundColor = Utils.detailviewcolor
         return arrivedView
@@ -334,6 +347,28 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         let detailNumber = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
         detailNumber.textColor = UIColor.systemGray
         detailNumber.text = "Trailer Number"
+        detailNumber.translatesAutoresizingMaskIntoConstraints = false
+        detailNumber.contentMode = .scaleAspectFill
+        detailNumber.font = UIFont.systemFont(ofSize: 10)
+        return detailNumber
+        
+    }()
+    
+    let detailPickupText : UILabel = {
+        let detailNumber = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailNumber.textColor = UIColor.systemGray
+        detailNumber.text = "Pickup"
+        detailNumber.translatesAutoresizingMaskIntoConstraints = false
+        detailNumber.contentMode = .scaleAspectFill
+        detailNumber.font = UIFont.systemFont(ofSize: 10)
+        return detailNumber
+        
+    }()
+    
+    let detailDeliveryText : UILabel = {
+        let detailNumber = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailNumber.textColor = UIColor.systemGray
+        detailNumber.text = "Delivery"
         detailNumber.translatesAutoresizingMaskIntoConstraints = false
         detailNumber.contentMode = .scaleAspectFill
         detailNumber.font = UIFont.systemFont(ofSize: 10)
@@ -749,11 +784,10 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         setupPdf()
         
         setupHomeLabeltext()
-       
-  
 
     }
     
+ 
     func  setupHomeLabeltext(){
         labelView.addSubview(homeDetailLabelText)
         labelViewTwoo.addSubview(homeDetailLabelTextTwoo)
@@ -768,7 +802,6 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         
         
         arrivedView.addSubview(lineView)
-        
         arrivedView.addSubview(lineViewTwoo)
         
         arrivedView.addSubview(locationImage)
@@ -806,14 +839,15 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         numberLabelText.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 60).isActive = true
         numberLabelText.leftAnchor.constraint(equalTo: arrivedView.leftAnchor,constant: 40).isActive = true
         
+
         arrivedView.addSubview(distanceLabelText)
         distanceLabelText.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 60).isActive = true
         distanceLabelText.rightAnchor.constraint(equalTo: arrivedView.rightAnchor,constant: -40).isActive = true
-        
+
         arrivedView.addSubview(numberLabelTextTwoo)
         numberLabelTextTwoo.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 75).isActive = true
         numberLabelTextTwoo.leftAnchor.constraint(equalTo: arrivedView.leftAnchor,constant: 50).isActive = true
-        
+
         arrivedView.addSubview(distanceLabelTextTwoo)
         distanceLabelTextTwoo.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 75).isActive = true
         distanceLabelTextTwoo.rightAnchor.constraint(equalTo: arrivedView.rightAnchor,constant: -50).isActive = true
@@ -892,13 +926,23 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         detailPhone.topAnchor.constraint(equalTo: detailWeightView.bottomAnchor,constant: 10).isActive = true
         detailPhone.leftAnchor.constraint(equalTo: detailPhoneView.leftAnchor,constant: 5).isActive = true
         
+        detailView.addSubview(detailPickupText)
+        detailPickupText.topAnchor.constraint(equalTo: detailDriverView.bottomAnchor,constant: 10).isActive = true
+        detailPickupText.leftAnchor.constraint(equalTo: detailDriverView.leftAnchor,constant: 5).isActive = true
+        
+
+  
+        
         detailView.addSubview(detailPickupView)
         detailPickupView.addSubview(detailFTW)
         detailPickupView.addSubview(detailLocation)
         detailPickupView.addSubview(detailTimeImage)
         detailPickupView.addSubview(detailDataTime)
         detailPickupView.addSubview(detailPoint)
+        detailView.addSubview(detailDeliveryText)
         detailPickupLocationView.addSubview(DetailLocationImage)
+        detailDeliveryText.leftAnchor.constraint(equalTo: detailDriverView.leftAnchor,constant: 5).isActive = true
+        detailDeliveryText.topAnchor.constraint(equalTo: detailPickupView.bottomAnchor,constant: 3).isActive = true
         detailFTW.topAnchor.constraint(equalTo: detailPickupView.topAnchor,constant: 5).isActive = true
         detailFTW.leftAnchor.constraint(equalTo: detailPickupView.leftAnchor,constant: 10).isActive = true
         detailLocation.topAnchor.constraint(equalTo: detailPickupView.topAnchor,constant: 5).isActive = true
