@@ -15,7 +15,7 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         setups()
        }
     
-    //  MARK: - Map
+//  MARK: - Map
         
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
@@ -26,6 +26,8 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
             mapView.isScrollEnabled = true
             homeView.addSubview(mapView)
             homeView.addSubview(arrivedView)
+            homeView.addSubview(detailView)
+            homeView.addSubview(pdfView)
         }
     
 //    MARK: - ScrollView
@@ -40,11 +42,21 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         return scrollView
         }()
     
+    let homeDetailLabelText : UILabel = {
+        let locationlabelText = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        locationlabelText.textColor = UIColor.black
+        locationlabelText.text = "Detailes"
+        locationlabelText.translatesAutoresizingMaskIntoConstraints = false
+        locationlabelText.font = UIFont.boldSystemFont(ofSize: 14)
+        return locationlabelText
+    }()
+    
+    
 //    MARK: - labelTexts
     
     let locationlabelText : UILabel = {
         let locationlabelText = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
-        locationlabelText.textColor = UIColor.black
+        locationlabelText.textColor = Utils.lblbuttonColor
         locationlabelText.text = "12503 Apex Great Basin Way"
         locationlabelText.translatesAutoresizingMaskIntoConstraints = false
         locationlabelText.font = UIFont.boldSystemFont(ofSize: 12)
@@ -158,7 +170,7 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
     
     let locationImage : UIImageView = {
         let locationImage = UIImageView()
-        locationImage.image = UIImage(named: "11")
+        locationImage.image = UIImage(named: "123")
         locationImage.tintColor = Utils.lblbuttonColor
         locationImage.translatesAutoresizingMaskIntoConstraints = false
         locationImage.contentMode = .scaleAspectFill
@@ -213,123 +225,746 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         return arrivedButton
     }()
     
-//  MARK: All Setups
+    
+    
+    
+    
+    
+    
+    
+    
+//    MARK: - Detail Pages
+    
+//    MARK: - Deatil Views
+    
+    private let detailView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*0.9500, width: UIScreen.main.bounds.width*0.9000, height: UIScreen.main.bounds.height*0.5300));
+        arrivedView.layer.cornerRadius = 15
+        arrivedView.backgroundColor = UIColor.white
+        return arrivedView
+    }()
+    
+    private let detailNumberView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*0.0500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0600));
+        arrivedView.layer.cornerRadius = 8
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailDistanceView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.4800, y: UIScreen.main.bounds.height*0.0500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0600));
+        arrivedView.layer.cornerRadius = 8
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailTimeView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*0.1500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0600));
+        arrivedView.layer.cornerRadius = 8
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailWeightView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.4800, y: UIScreen.main.bounds.height*0.1500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0600));
+        arrivedView.layer.cornerRadius = 8
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailDriverView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*0.2500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0600));
+        arrivedView.layer.cornerRadius = 8
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailPhoneView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.4800, y: UIScreen.main.bounds.height*0.2500, width: UIScreen.main.bounds.width*0.3500, height: UIScreen.main.bounds.height*0.0700));
+        arrivedView.layer.cornerRadius = 8
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailPickupView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*0.3500, width: UIScreen.main.bounds.width*0.5500, height: UIScreen.main.bounds.height*0.0700));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailDeliveryView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*0.4500, width: UIScreen.main.bounds.width*0.5500, height: UIScreen.main.bounds.height*0.0700));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailPickupLocationView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.6750, y: UIScreen.main.bounds.height*0.3500, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0700));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailDeliveryLocationView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.6750, y: UIScreen.main.bounds.height*0.4500, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0700));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.detailviewcolor
+        return arrivedView
+    }()
+    
+    private let detailPoint :UIView = {
+        let myView=UIView()
+        myView.backgroundColor = UIColor.black
+        myView.layer.cornerRadius=3
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+        
+    }()
+    
+    private let deliveryPoint :UIView = {
+        let myView=UIView()
+        myView.backgroundColor = UIColor.black
+        myView.layer.cornerRadius=3
+        myView.translatesAutoresizingMaskIntoConstraints = false
+        myView.contentMode = .scaleAspectFit
+       return myView
+        
+    }()
+    
+//    MARK: - Detail Label Texts
+    
+    let detailNumber : UILabel = {
+        let detailNumber = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailNumber.textColor = UIColor.systemGray
+        detailNumber.text = "Trailer Number"
+        detailNumber.translatesAutoresizingMaskIntoConstraints = false
+        detailNumber.contentMode = .scaleAspectFill
+        detailNumber.font = UIFont.systemFont(ofSize: 10)
+        return detailNumber
+        
+    }()
+    let detailNumberTwo : UILabel = {
+        let detailNumberTwo = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailNumberTwo.textColor = UIColor.black
+        detailNumberTwo.text = "181312312423"
+        detailNumberTwo.translatesAutoresizingMaskIntoConstraints = false
+        detailNumberTwo.contentMode = .scaleAspectFill
+        detailNumberTwo.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailNumberTwo
+        
+    }()
+    
+    let detailDistance : UILabel = {
+        let detailDistance = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDistance.textColor = UIColor.systemGray
+        detailDistance.text = "Distance"
+        detailDistance.translatesAutoresizingMaskIntoConstraints = false
+        detailDistance.contentMode = .scaleAspectFill
+        detailDistance.font = UIFont.systemFont(ofSize: 10)
+        return detailDistance
+        
+    }()
+    
+    let detailDistanceTwoo : UILabel = {
+        let detailDistanceTwoo = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDistanceTwoo.textColor = UIColor.black
+        detailDistanceTwoo.text = "895 mile"
+        detailDistanceTwoo.translatesAutoresizingMaskIntoConstraints = false
+        detailDistanceTwoo.contentMode = .scaleAspectFill
+        detailDistanceTwoo.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailDistanceTwoo
+        
+    }()
+    
+    let detailTime : UILabel = {
+        let detailTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailTime.textColor = UIColor.systemGray
+        detailTime.text = "Est. time"
+        detailTime.translatesAutoresizingMaskIntoConstraints = false
+        detailTime.contentMode = .scaleAspectFill
+        detailTime.font = UIFont.systemFont(ofSize: 10)
+        return detailTime
+        
+    }()
+    
+    let detailTimeTwoo : UILabel = {
+        let detailTimeTwoo = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailTimeTwoo.textColor = UIColor.black
+        detailTimeTwoo.text = "-7h : 30m"
+        detailTimeTwoo.translatesAutoresizingMaskIntoConstraints = false
+        detailTimeTwoo.contentMode = .scaleAspectFill
+        detailTimeTwoo.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailTimeTwoo
+        
+    }()
+    
+    let detailWeight : UILabel = {
+        let detailWeight = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailWeight.textColor = UIColor.systemGray
+        detailWeight.text = "Weight"
+        detailWeight.translatesAutoresizingMaskIntoConstraints = false
+        detailWeight.contentMode = .scaleAspectFill
+        detailWeight.font = UIFont.systemFont(ofSize: 10)
+        return detailWeight
+        
+    }()
+    
+    let detailWeightTwoo : UILabel = {
+        let detailWeightTwoo = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailWeightTwoo.textColor = UIColor.black
+        detailWeightTwoo.text = "14600"
+        detailWeightTwoo.translatesAutoresizingMaskIntoConstraints = false
+        detailWeightTwoo.contentMode = .scaleAspectFill
+        detailWeightTwoo.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailWeightTwoo
+        
+    }()
+    
+    let detailDriver : UILabel = {
+        let detailDriver = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDriver.textColor = UIColor.systemGray
+        detailDriver.text = "Driver"
+        detailDriver.translatesAutoresizingMaskIntoConstraints = false
+        detailDriver.contentMode = .scaleAspectFill
+        detailDriver.font = UIFont.systemFont(ofSize: 10)
+        return detailDriver
+        
+    }()
+    
+    let detailDriverTwoo : UILabel = {
+        let detailDriverTwoo = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDriverTwoo.textColor = UIColor.black
+        detailDriverTwoo.text = "Garry Nicholas"
+        detailDriverTwoo.translatesAutoresizingMaskIntoConstraints = false
+        detailDriverTwoo.contentMode = .scaleAspectFill
+        detailDriverTwoo.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailDriverTwoo
+        
+    }()
+    
+    let detailPhone : UILabel = {
+        let detailPhone = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailPhone.textColor = UIColor.systemGray
+        detailPhone.text = "Phone"
+        detailPhone.translatesAutoresizingMaskIntoConstraints = false
+        detailPhone.contentMode = .scaleAspectFill
+        detailPhone.font = UIFont.boldSystemFont(ofSize: 10)
+        return detailPhone
+        
+    }()
+    
+    let detailPhoneTwoo : UILabel = {
+        let detailPhoneTwoo = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailPhoneTwoo.textColor = UIColor.black
+        detailPhoneTwoo.text = "555-555-555"
+        detailPhoneTwoo.translatesAutoresizingMaskIntoConstraints = false
+        detailPhoneTwoo.contentMode = .scaleAspectFill
+        detailPhoneTwoo.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailPhoneTwoo
+        
+    }()
+    
+    let detailFTW : UILabel = {
+        let detailFTW = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailFTW.textColor = UIColor.black
+        detailFTW.text = "FTW2"
+        detailFTW.translatesAutoresizingMaskIntoConstraints = false
+        detailFTW.contentMode = .scaleAspectFill
+        detailFTW.font = UIFont.boldSystemFont(ofSize: 14)
+        return detailFTW
+        
+    }()
+    
+    let detailLocation : UILabel = {
+        let detailLocation = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailLocation.textColor = UIColor.systemGray
+        detailLocation.text = "Cranbury, New Jersey"
+        detailLocation.translatesAutoresizingMaskIntoConstraints = false
+        detailLocation.contentMode = .scaleAspectFill
+        detailLocation.font = UIFont.boldSystemFont(ofSize: 10)
+        return detailLocation
+        
+    }()
+    
+    let detailDataTime : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.systemGray
+        detailDataTime.text = "14/09/22 11:40 PDT"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 9)
+        return detailDataTime
+        
+    }()
+    
+    let deliveryFTW : UILabel = {
+        let detailFTW = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailFTW.textColor = UIColor.black
+        detailFTW.text = "FTW2"
+        detailFTW.translatesAutoresizingMaskIntoConstraints = false
+        detailFTW.contentMode = .scaleAspectFill
+        detailFTW.font = UIFont.boldSystemFont(ofSize: 14)
+        return detailFTW
+        
+    }()
+    
+    let deliveryLocation : UILabel = {
+        let detailLocation = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailLocation.textColor = UIColor.systemGray
+        detailLocation.text = "Cranbury, New Jersey"
+        detailLocation.translatesAutoresizingMaskIntoConstraints = false
+        detailLocation.contentMode = .scaleAspectFill
+        detailLocation.font = UIFont.boldSystemFont(ofSize: 10)
+        return detailLocation
+        
+    }()
+    
+    let deliveryDataTime : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.systemGray
+        detailDataTime.text = "14/09/22 11:40 PDT"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 9)
+        return detailDataTime
+        
+    }()
+    
+//    MARK: - DetailImages
+    
+    let detailTimeImage : UIImageView = {
+        let locationImage = UIImageView()
+        locationImage.image = UIImage(named: "time")
+        locationImage.tintColor = Utils.lblbuttonColor
+        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        locationImage.contentMode = .scaleAspectFill
+        locationImage.clipsToBounds = true
+        return locationImage
+    }()
+    
+    let deliveryTimeImage : UIImageView = {
+        let locationImage = UIImageView()
+        locationImage.image = UIImage(named: "time")
+        locationImage.tintColor = Utils.lblbuttonColor
+        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        locationImage.contentMode = .scaleAspectFill
+        locationImage.clipsToBounds = true
+        return locationImage
+    }()
+    
+    let DetailLocationImage : UIImageView = {
+        let locationImage = UIImageView()
+        locationImage.image = UIImage(named: "12")
+        locationImage.tintColor = Utils.lblbuttonColor
+        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        locationImage.contentMode = .scaleAspectFill
+        locationImage.clipsToBounds = true
+        return locationImage
+    }()
+    
+    let DetailDeliveryLocationImage : UIImageView = {
+        let locationImage = UIImageView()
+        locationImage.image = UIImage(named: "13")
+        locationImage.tintColor = Utils.lblbuttonColor
+        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        locationImage.contentMode = .scaleAspectFill
+        locationImage.clipsToBounds = true
+        return locationImage
+    }()
+    
+    
+//    MARK: - PDF Pages
+    
+//    MARK: - PDf Views
+    
+    private let pdfView: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0470, y: UIScreen.main.bounds.height*1.57, width: UIScreen.main.bounds.width*0.9000, height: UIScreen.main.bounds.height*0.4300));
+        arrivedView.layer.cornerRadius = 25
+        arrivedView.backgroundColor = UIColor.white
+        return arrivedView
+    }()
+    
+    private let pdfViewOne: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.0400, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0800));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.chatColor2
+        return arrivedView
+    }()
+    
+    private let pdfViewTwoo: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.1800, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0800));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.chatColor2
+        return arrivedView
+    }()
+    
+    private let pdfViewThree: UIView = {
+        let arrivedView = UIView(frame: CGRect(x: UIScreen.main.bounds.width*0.0750, y: UIScreen.main.bounds.height*0.3200, width: UIScreen.main.bounds.width*0.1500, height: UIScreen.main.bounds.height*0.0800));
+        arrivedView.layer.cornerRadius = 10
+        arrivedView.backgroundColor = Utils.chatColor2
+        return arrivedView
+    }()
+    
+//    MARK: - PDF Images
+    
+    
+    let pdfImages : UIImageView = {
+        let locationImage = UIImageView()
+        locationImage.image = UIImage(named: "scrip")
+        locationImage.tintColor = Utils.lblbuttonColor
+        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        locationImage.contentMode = .scaleAspectFill
+        locationImage.clipsToBounds = true
+        return locationImage
+    }()
+    
+    let pdfImagestwoo : UIImageView = {
+        let locationImage = UIImageView()
+        locationImage.image = UIImage(named: "scriptwoo")
+        locationImage.tintColor = Utils.lblbuttonColor
+        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        locationImage.contentMode = .scaleAspectFill
+        locationImage.clipsToBounds = true
+        return locationImage
+    }()
+    
+    let pdfImagesThree : UIImageView = {
+        let locationImage = UIImageView()
+        locationImage.image = UIImage(named: "scripthree")
+        locationImage.tintColor = Utils.lblbuttonColor
+        locationImage.translatesAutoresizingMaskIntoConstraints = false
+        locationImage.contentMode = .scaleAspectFill
+        locationImage.clipsToBounds = true
+        return locationImage
+    }()
+    
+//    MARK: - PDF Label Text
+    
+    let pdfLabelText : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.white
+        detailDataTime.text = "insur.pdf"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 10)
+        return detailDataTime
+        
+    }()
+    
+    let pdfLabelTextTwoo : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.white
+        detailDataTime.text = "insur.pdf"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 10)
+        return detailDataTime
+        
+    }()
+    
+    let pdfLabelTextThree : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.white
+        detailDataTime.text = "insur.pdf"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 10)
+        return detailDataTime
+        
+    }()
+    
+    let pdfDescriptionLabeltext : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.black
+        detailDataTime.text = "Bill of Lading"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailDataTime
+        
+    }()
+    
+    let pdfDescriptionLabeltextTwoo : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.black
+        detailDataTime.text = "Trailer Documentation"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailDataTime
+        
+    }()
+    
+    let pdfDescriptionLabeltextThree : UILabel = {
+        let detailDataTime = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 12));
+        detailDataTime.textColor = UIColor.black
+        detailDataTime.text = "Insurance"
+        detailDataTime.translatesAutoresizingMaskIntoConstraints = false
+        detailDataTime.contentMode = .scaleAspectFill
+        detailDataTime.font = UIFont.boldSystemFont(ofSize: 12)
+        return detailDataTime
+        
+    }()
+    
+    
+    
+    
+//  MARK:  - All Setups
     
     func setups(){
-        setupImg()
-        setupText()
-        setupNameLabelText()
-        setupNameLabelTextTwoo()
-        setupdataLabelText()
-        setupdataLabelTextTwoo()
-        setupButton()
-        setupNumberlabeltext()
-        setupDistanceLabelText()
-        setupNumberlabeltextTwoo()
-        setupDistanceLabelTextTwoo()
-        setupLineView()
-        setupLineViewTwoo()
-        setupTimeLabelText()
-        setupTimeLabelTextTwoo()
+
+        setupArrivedView()
+
+        setupDetailView()
+        
+        setupPdf()
+        
+//        setupHomeLabeltext()
+       
   
 
     }
     
-    func setupLineView(){
+    func  setupHomeLabeltext(){
+        homeView.addSubview(homeDetailLabelText)
+
+        homeDetailLabelText.topAnchor.constraint(equalTo: homeView.topAnchor,constant: 830).isActive = true
+        homeDetailLabelText.leftAnchor.constraint(equalTo: homeView.leftAnchor,constant: 30).isActive = true
+        
+    }
+    
+    
+//    MARK: Arrived Views
+    func setupArrivedView(){
+        
+        
         arrivedView.addSubview(lineView)
-    }
-    
-    func setupLineViewTwoo(){
+        
         arrivedView.addSubview(lineViewTwoo)
-    }
-    
-    func setupImg (){
+        
         arrivedView.addSubview(locationImage)
-        
-        
         locationImage.topAnchor.constraint(equalTo: arrivedView.topAnchor, constant: 30).isActive = true
         locationImage.leftAnchor.constraint(equalTo: arrivedView.leftAnchor, constant: 30).isActive = true
         locationImage.widthAnchor.constraint(equalToConstant: 12).isActive = true
         locationImage.heightAnchor.constraint(equalToConstant: 12).isActive = true
-    }
-    
-    func setupText (){
+        
         arrivedView.addSubview(locationlabelText)
         locationlabelText.topAnchor.constraint(equalTo: arrivedView.topAnchor,constant: 30).isActive = true
         locationlabelText.leftAnchor.constraint(equalTo: locationImage.leftAnchor,constant: 25).isActive = true
         locationlabelText.widthAnchor.constraint(equalToConstant: 1000).isActive = true
         locationlabelText.heightAnchor.constraint(equalToConstant: 12).isActive = true
-    }
-    
-    func setupNameLabelText(){
+        
         arrivedView.addSubview(nameLabelText)
         nameLabelText.topAnchor.constraint(equalTo: arrivedView.topAnchor,constant: 120).isActive = true
         nameLabelText.leftAnchor.constraint(equalTo: arrivedView.leftAnchor,constant: 30).isActive = true
-    }
-    
-    func setupNameLabelTextTwoo(){
+        
         arrivedView.addSubview(nameLabelTextTwoo)
         nameLabelTextTwoo.topAnchor.constraint(equalTo: arrivedView.topAnchor,constant: 120).isActive = true
         nameLabelTextTwoo.rightAnchor.constraint(equalTo: arrivedView.rightAnchor,constant: -30).isActive = true
-    }
-    
-    func setupdataLabelText(){
+        
         arrivedView.addSubview(dataLabelText)
         dataLabelText.topAnchor.constraint(equalTo: arrivedView.topAnchor,constant: 100).isActive = true
         dataLabelText.leftAnchor.constraint(equalTo: arrivedView.leftAnchor,constant: 30).isActive = true
-    }
-    
-    func setupdataLabelTextTwoo(){
+        
         arrivedView.addSubview(dataLabelTextTwoo)
         dataLabelTextTwoo.topAnchor.constraint(equalTo: arrivedView.topAnchor,constant: 100).isActive = true
         dataLabelTextTwoo.rightAnchor.constraint(equalTo: arrivedView.rightAnchor,constant: -30).isActive = true
-    }
-    
-    func setupButton(){
+        
         arrivedView.addSubview(arrivedButton)
-    }
-    
-    func setupNumberlabeltext(){
+        
         arrivedView.addSubview(numberLabelText)
+        arrivedView.addSubview(lineViewTwoo)
         numberLabelText.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 60).isActive = true
         numberLabelText.leftAnchor.constraint(equalTo: arrivedView.leftAnchor,constant: 40).isActive = true
-    }
-    
-    func setupDistanceLabelText(){
+        
         arrivedView.addSubview(distanceLabelText)
         distanceLabelText.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 60).isActive = true
         distanceLabelText.rightAnchor.constraint(equalTo: arrivedView.rightAnchor,constant: -40).isActive = true
-    }
-    
-    func setupNumberlabeltextTwoo(){
+        
         arrivedView.addSubview(numberLabelTextTwoo)
         numberLabelTextTwoo.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 75).isActive = true
         numberLabelTextTwoo.leftAnchor.constraint(equalTo: arrivedView.leftAnchor,constant: 50).isActive = true
-    }
-    
-    func setupDistanceLabelTextTwoo(){
+        
         arrivedView.addSubview(distanceLabelTextTwoo)
         distanceLabelTextTwoo.topAnchor.constraint(equalTo: arrivedButton.topAnchor,constant: 75).isActive = true
         distanceLabelTextTwoo.rightAnchor.constraint(equalTo: arrivedView.rightAnchor,constant: -50).isActive = true
-    }
-    
-    func setupTimeLabelText(){
+        
         arrivedView.addSubview(timeLabelText)
         timeLabelText.bottomAnchor.constraint(equalTo: arrivedView.bottomAnchor,constant: -30).isActive = true
         timeLabelText.centerXAnchor.constraint(equalTo: arrivedView.centerXAnchor).isActive = true
-        }
-    
-    func setupTimeLabelTextTwoo(){
+        
         arrivedView.addSubview(timeLabelTextTwoo)
         timeLabelTextTwoo.bottomAnchor.constraint(equalTo: arrivedView.bottomAnchor,constant: -5).isActive = true
         timeLabelTextTwoo.centerXAnchor.constraint(equalTo: arrivedView.centerXAnchor).isActive = true
-   
-        }
-    
-  
+    }
     
 
+    
+// MARK: - Detail Views
+    
+    func setupDetailView(){
+        detailView.addSubview(detailNumberView)
+        
+        detailView.addSubview(detailDistanceView)
+        
+        detailView.addSubview(detailWeightView)
+        
+        detailView.addSubview(detailTimeView)
+        
+        detailView.addSubview(detailDriverView)
+        
+        detailView.addSubview(detailPhoneView)
+        
+        detailView.addSubview(detailNumber)
+        detailNumber.topAnchor.constraint(equalTo: detailView.topAnchor,constant: 15).isActive = true
+        detailNumber.leftAnchor.constraint(equalTo: detailNumberView.leftAnchor,constant: 5).isActive = true
+        
+        detailNumberView.addSubview(detailNumberTwo)
+        detailNumberTwo.centerXAnchor.constraint(equalTo: detailNumberView.centerXAnchor).isActive = true
+        detailNumberTwo.centerYAnchor.constraint(equalTo: detailNumberView.centerYAnchor).isActive = true
+        
+        detailDistanceView.addSubview(detailDistanceTwoo)
+        detailDistanceTwoo.centerXAnchor.constraint(equalTo: detailDistanceView.centerXAnchor).isActive = true
+        detailDistanceTwoo.centerYAnchor.constraint(equalTo: detailDistanceView.centerYAnchor).isActive = true
+        
+        detailView.addSubview(detailDistance)
+        detailDistance.topAnchor.constraint(equalTo: detailView.topAnchor,constant: 15).isActive = true
+        detailDistance.leftAnchor.constraint(equalTo: detailDistanceView.leftAnchor,constant: 5).isActive = true
+        
+        detailTimeView.addSubview(detailTimeTwoo)
+        detailTimeTwoo.centerXAnchor.constraint(equalTo: detailTimeView.centerXAnchor).isActive = true
+        detailTimeTwoo.centerYAnchor.constraint(equalTo: detailTimeView.centerYAnchor).isActive = true
+        
+        detailView.addSubview(detailTime)
+        detailTime.topAnchor.constraint(equalTo: detailNumberView.bottomAnchor,constant: 10 ).isActive = true
+        detailTime.leftAnchor.constraint(equalTo: detailTimeView.leftAnchor,constant: 5).isActive = true
+        
+        detailWeightView.addSubview(detailWeightTwoo)
+        detailWeightTwoo.centerXAnchor.constraint(equalTo: detailWeightView.centerXAnchor).isActive = true
+        detailWeightTwoo.centerYAnchor.constraint(equalTo: detailWeightView.centerYAnchor).isActive = true
+        
+        detailView.addSubview(detailWeight)
+        detailWeight.topAnchor.constraint(equalTo: detailDistanceView.bottomAnchor,constant: 10).isActive = true
+        detailWeight.leftAnchor.constraint(equalTo: detailWeightView.leftAnchor,constant: 5).isActive = true
+        
+        detailDriverView.addSubview(detailDriverTwoo)
+        detailDriverTwoo.centerXAnchor.constraint(equalTo: detailDriverView.centerXAnchor).isActive = true
+        detailDriverTwoo.centerYAnchor.constraint(equalTo: detailDriverView.centerYAnchor).isActive = true
+        
+        detailView.addSubview(detailDriver)
+        detailDriver.topAnchor.constraint(equalTo: detailTimeView.bottomAnchor,constant: 10 ).isActive = true
+        detailDriver.leftAnchor.constraint(equalTo: detailDriverView.leftAnchor,constant: 5).isActive = true
+        
+        detailPhoneView.addSubview(detailPhoneTwoo)
+        detailPhoneTwoo.centerXAnchor.constraint(equalTo: detailPhoneView.centerXAnchor).isActive = true
+        detailPhoneTwoo.centerYAnchor.constraint(equalTo: detailPhoneView.centerYAnchor).isActive = true
+        
+        detailView.addSubview(detailPhone)
+        detailPhone.topAnchor.constraint(equalTo: detailWeightView.bottomAnchor,constant: 10).isActive = true
+        detailPhone.leftAnchor.constraint(equalTo: detailPhoneView.leftAnchor,constant: 5).isActive = true
+        
+        detailView.addSubview(detailPickupView)
+        detailPickupView.addSubview(detailFTW)
+        detailPickupView.addSubview(detailLocation)
+        detailPickupView.addSubview(detailTimeImage)
+        detailPickupView.addSubview(detailDataTime)
+        detailPickupView.addSubview(detailPoint)
+        detailPickupLocationView.addSubview(DetailLocationImage)
+        detailFTW.topAnchor.constraint(equalTo: detailPickupView.topAnchor,constant: 5).isActive = true
+        detailFTW.leftAnchor.constraint(equalTo: detailPickupView.leftAnchor,constant: 10).isActive = true
+        detailLocation.topAnchor.constraint(equalTo: detailPickupView.topAnchor,constant: 5).isActive = true
+        detailLocation.leftAnchor.constraint(equalTo: detailFTW.rightAnchor,constant: 10).isActive = true
+        detailLocation.centerYAnchor.constraint(equalTo: detailFTW.centerYAnchor).isActive = true
+        detailTimeImage.topAnchor.constraint(equalTo: detailFTW.bottomAnchor,constant: 5).isActive = true
+        detailTimeImage.leftAnchor.constraint(equalTo: detailPickupView.leftAnchor,constant: 10).isActive = true
+        detailDataTime.leftAnchor.constraint(equalTo: detailTime.leftAnchor,constant: 20).isActive = true
+        detailDataTime.topAnchor.constraint(equalTo: detailFTW.bottomAnchor,constant: 5).isActive = true
+        detailPoint.widthAnchor.constraint(equalToConstant: 4).isActive = true
+        detailPoint.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        detailPoint.centerYAnchor.constraint(equalTo: detailFTW.centerYAnchor).isActive = true
+        detailPoint.leftAnchor.constraint(equalTo: detailFTW.rightAnchor,constant: 3).isActive = true
+        DetailLocationImage.centerYAnchor.constraint(equalTo: detailPickupLocationView.centerYAnchor).isActive = true
+        DetailLocationImage.centerXAnchor.constraint(equalTo: detailPickupLocationView.centerXAnchor).isActive = true
+        
+        detailView.addSubview(detailDeliveryView)
+        detailDeliveryView.addSubview(deliveryFTW)
+        detailDeliveryView.addSubview(deliveryLocation)
+        detailDeliveryView.addSubview(deliveryTimeImage)
+        detailDeliveryView.addSubview(deliveryDataTime)
+        detailDeliveryView.addSubview(deliveryPoint)
+        detailDeliveryLocationView.addSubview(DetailDeliveryLocationImage)
+        deliveryFTW.topAnchor.constraint(equalTo: detailDeliveryView.topAnchor,constant: 5).isActive = true
+        deliveryFTW.leftAnchor.constraint(equalTo: detailDeliveryView.leftAnchor,constant: 10).isActive = true
+        deliveryLocation.topAnchor.constraint(equalTo: detailDeliveryView.topAnchor,constant: 5).isActive = true
+        deliveryLocation.leftAnchor.constraint(equalTo: deliveryFTW.rightAnchor,constant: 10).isActive = true
+        deliveryLocation.centerYAnchor.constraint(equalTo: deliveryFTW.centerYAnchor).isActive = true
+        deliveryTimeImage.topAnchor.constraint(equalTo: deliveryFTW.bottomAnchor,constant: 5).isActive = true
+        deliveryTimeImage.leftAnchor.constraint(equalTo: detailDeliveryView.leftAnchor,constant: 10).isActive = true
+        deliveryDataTime.leftAnchor.constraint(equalTo: deliveryTimeImage.leftAnchor,constant: 20).isActive = true
+        deliveryDataTime.topAnchor.constraint(equalTo: deliveryFTW.bottomAnchor,constant: 5).isActive = true
+        deliveryPoint.widthAnchor.constraint(equalToConstant: 4).isActive = true
+        deliveryPoint.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        deliveryPoint.centerYAnchor.constraint(equalTo: deliveryFTW.centerYAnchor).isActive = true
+        deliveryPoint.leftAnchor.constraint(equalTo: deliveryFTW.rightAnchor,constant: 3).isActive = true
+        DetailDeliveryLocationImage.centerYAnchor.constraint(equalTo: detailDeliveryLocationView.centerYAnchor).isActive = true
+        DetailDeliveryLocationImage.centerXAnchor.constraint(equalTo: detailDeliveryLocationView.centerXAnchor).isActive = true
+        
+        detailView.addSubview(detailPickupLocationView)
+        
+        detailView.addSubview(detailDeliveryLocationView)
+        
+    }
+    
+    func setupPdf(){
+        pdfView.addSubview(pdfViewOne)
+        pdfView.addSubview(pdfViewTwoo)
+        pdfView.addSubview(pdfViewThree)
+        pdfViewOne.addSubview(pdfImages)
+        pdfViewTwoo.addSubview(pdfImagestwoo)
+        pdfViewThree.addSubview(pdfImagesThree)
+        pdfImages.topAnchor.constraint(equalTo: pdfViewOne.topAnchor,constant: 5).isActive = true
+        pdfImages.bottomAnchor.constraint(equalTo: pdfViewOne.bottomAnchor,constant: -20).isActive = true
+        pdfImages.leftAnchor.constraint(equalTo: pdfViewOne.leftAnchor,constant: 15).isActive = true
+        pdfImages.rightAnchor.constraint(equalTo: pdfViewOne.rightAnchor,constant: -15).isActive = true
+        pdfImagestwoo.topAnchor.constraint(equalTo: pdfViewTwoo.topAnchor,constant: 7).isActive = true
+        pdfImagestwoo.leftAnchor.constraint(equalTo: pdfViewTwoo.leftAnchor,constant: 15).isActive = true
+        pdfImagestwoo.rightAnchor.constraint(equalTo: pdfViewTwoo.rightAnchor,constant: -15).isActive = true
+        pdfImagestwoo.bottomAnchor.constraint(equalTo: pdfViewTwoo.bottomAnchor,constant: -20).isActive = true
+        pdfImagesThree.topAnchor.constraint(equalTo: pdfViewThree.topAnchor,constant: 7).isActive = true
+        pdfImagesThree.leftAnchor.constraint(equalTo: pdfViewThree.leftAnchor,constant: 15).isActive = true
+        pdfImagesThree.rightAnchor.constraint(equalTo: pdfViewThree.rightAnchor,constant: -15).isActive = true
+        pdfImagesThree.bottomAnchor.constraint(equalTo: pdfViewThree.bottomAnchor,constant: -20).isActive = true
+        
+        pdfViewOne.addSubview(pdfLabelText)
+        pdfViewTwoo.addSubview(pdfLabelTextTwoo)
+        pdfViewThree.addSubview(pdfLabelTextThree)
+        pdfLabelText.bottomAnchor.constraint(equalTo: pdfImages.bottomAnchor,constant: 15).isActive = true
+        pdfLabelText.centerXAnchor.constraint(equalTo: pdfViewOne.centerXAnchor).isActive = true
+        pdfLabelTextTwoo.bottomAnchor.constraint(equalTo: pdfImagestwoo.bottomAnchor,constant: 15).isActive = true
+        pdfLabelTextTwoo.centerXAnchor.constraint(equalTo: pdfViewTwoo.centerXAnchor).isActive = true
+        pdfLabelTextThree.bottomAnchor.constraint(equalTo: pdfImagesThree.bottomAnchor,constant: 15).isActive = true
+        pdfLabelTextThree.centerXAnchor.constraint(equalTo: pdfViewThree.centerXAnchor).isActive = true
 
+        
+        pdfView.addSubview(pdfDescriptionLabeltext)
+        pdfView.addSubview(pdfDescriptionLabeltextTwoo)
+        pdfView.addSubview(pdfDescriptionLabeltextThree)
+        pdfDescriptionLabeltext.centerYAnchor.constraint(equalTo: pdfViewOne.centerYAnchor).isActive = true
+        pdfDescriptionLabeltext.leftAnchor.constraint(equalTo: pdfViewOne.rightAnchor,constant: 20).isActive = true
+        pdfDescriptionLabeltextTwoo.centerYAnchor.constraint(equalTo: pdfViewTwoo.centerYAnchor).isActive = true
+        pdfDescriptionLabeltextTwoo.leftAnchor.constraint(equalTo: pdfViewTwoo.rightAnchor,constant: 20).isActive = true
+        pdfDescriptionLabeltextThree.centerYAnchor.constraint(equalTo: pdfViewThree.centerYAnchor).isActive = true
+        pdfDescriptionLabeltextThree.leftAnchor.constraint(equalTo: pdfViewThree.rightAnchor,constant: 20).isActive = true
+        
+        
+        
+
+
+        
+    }
     
     }
         
