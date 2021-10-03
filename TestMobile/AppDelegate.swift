@@ -1,9 +1,3 @@
-//
-//  AppDelegate.swift
-//  TestMobile
-//
-//  Created by الله أكبر on 16/09/21.
-//
 
 import UIKit
 @main 

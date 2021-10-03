@@ -18,6 +18,7 @@ class Utils{
     static let chatColor2=UIColor(rgb: 0x313E47)
     static let homeColor2=UIColor(rgb: 0xE5FFCC)
     static let detailviewcolor=UIColor(rgb: 0xF5F7F7)
+    static let pickuppicturecolor=UIColor(rgb: 0xCEF4FF)
 
 
 }
