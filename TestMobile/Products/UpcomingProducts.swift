@@ -83,7 +83,7 @@ class UpcomingproductCell : UITableViewCell {
     
     private let locationView :UIView = {
         let myView=UIView();
-        myView.backgroundColor = UIColor.white
+        myView.backgroundColor = UIColor.red
         myView.layer.cornerRadius=10
         myView.translatesAutoresizingMaskIntoConstraints = false
         myView.contentMode = .scaleAspectFit

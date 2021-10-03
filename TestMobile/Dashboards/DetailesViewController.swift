@@ -229,8 +229,17 @@ class DetailisViewController: UIViewController, MKMapViewDelegate {
         arrivedButton.layer.cornerRadius = 15
         arrivedButton.setTitle("Arrived", for: .normal)
         arrivedButton.title(for: .normal)
+       arrivedButton .addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         return arrivedButton
     }()
+    
+    @objc func buttonClicked() {
+          print("Button Clicked")
+         self.navigationController?.pushViewController(ReportViewController(), animated: false)
+
+    
+    
+     }
     
     
     
